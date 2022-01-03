@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context=".HelpActivity">
+
+    <EditText
+        android:id="@+id/_textRules"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:text="ZASADY\n1. Po rozpoczęciu gry zostanie wylosowane hasło, zadaniem osoby mówiącej jest opisać hasło za pomocą słów na literę P.\n\n2. Reszta graczy ma za zadanie domyślić się jakie jest hasło. Można zadawać pytania przedstawiającemu.\n\n3. Po natrafieniu przez graczy na hasło, następuje zmiana osoby przedstawiającej, która losuje dla siebie hasło."
+        app:layout_constraintBottom_toTopOf="@+id/bBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/bBack"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="?android:selectableItemBackground"
+        android:scaleX="2"
+        android:scaleY="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable"
+        app:tint="@color/green_terminal"
+        tools:ignore="SpeakableTextPresentCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>
