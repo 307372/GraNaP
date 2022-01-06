@@ -14,6 +14,7 @@
         <!-- Customize your theme here. -->
         <item name="colorOnBackground">@color/green_terminal</item>
         <item name="android:textColorPrimary">@color/green_terminal</item>
+        <item name="android:textColor">@color/green_terminal</item>
         <item name="android:colorBackground">@color/black</item>
     </style>
 </resources>
