@@ -16,25 +16,40 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/bShow"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bReroll" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/bReroll"
         android:layout_width="347dp"
         android:layout_height="wrap_content"
         android:text="Wylosuj inne"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/bShow"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Pokaż hasło"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bReroll"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.606"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/bSettingsGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:selectableItemBackground"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_preferences"
+        app:tint="@color/green_terminal"
+        tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

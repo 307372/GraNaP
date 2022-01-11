@@ -33,8 +33,16 @@
         android:id="@+id/bPlay"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:text="Graj"
+        app:layout_constraintBottom_toTopOf="@+id/bSettingsMainMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/bSettingsMainMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ustawienia"
         app:layout_constraintBottom_toTopOf="@+id/bHelp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
