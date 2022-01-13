@@ -28,6 +28,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iWordLengthMin" />
 
+    <TextView
+        android:id="@+id/_tvRerollWordsStartingWithP"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Wyłącz słowa zaczynające się na P"
+        android:tooltipText="Przytrzymaj dowolne miejsce na ekranie gry aby hasło stało się widoczne."
+        app:layout_constraintBottom_toBottomOf="@+id/swRerollWordsStartingWithP"
+        app:layout_constraintEnd_toStartOf="@+id/swRerollWordsStartingWithP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swHideWord" />
+
     <EditText
         android:id="@+id/iWordLengthMin"
         android:layout_width="0dp"
@@ -79,4 +90,12 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iWordLengthMin" />
+
+    <Switch
+        android:id="@+id/swRerollWordsStartingWithP"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swHideWord" />
 </androidx.constraintlayout.widget.ConstraintLayout>

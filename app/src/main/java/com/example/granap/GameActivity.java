@@ -1,6 +1,7 @@
 package com.example.granap;
 
 import static com.example.granap.SettingsActivity.HIDE_WORD;
+import static com.example.granap.SettingsActivity.REROLL_WORDS_STARTING_WITH_P;
 import static com.example.granap.SettingsActivity.SHARED_PREFERENCES;
 import static com.example.granap.SettingsActivity.WORD_LENGTH_MAX;
 import static com.example.granap.SettingsActivity.WORD_LENGTH_MIN;
@@ -35,6 +36,7 @@ public class GameActivity extends AppCompatActivity {
     int wordLengthMax;
     int wordLengthMin;
     boolean hideWord;
+    boolean rerollPWords;
 
     CountDownTimer timer = new CountDownTimer(1000, 100) {
         @Override public void onTick(long x) {}
@@ -93,14 +95,11 @@ public class GameActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
+
         loadSettings();
-        if (hideWord)
-        {
-            setWordInvisible();
-        }
-        else {
-            tvRandomWord.setInputType(InputType.TYPE_CLASS_TEXT);
-        }
+
+        if (hideWord) setWordInvisible();
+        else tvRandomWord.setInputType(InputType.TYPE_CLASS_TEXT);
     }
 
     public void showWordFor1s()
@@ -115,14 +114,20 @@ public class GameActivity extends AppCompatActivity {
         rerollWord();
     }
 
-    public void rerollWord()
+    public String getRandomWord()
     {
         int max = dictionary.length();
         int index = (int) Math.floor(Math.random()*max);
-        tvRandomWord.setText(dictionary.getString(index));
-        if (hideWord) {
-            showWordFor1s();
-        }
+        return dictionary.getString(index);
+    }
+
+    public void rerollWord()
+    {
+        String newWord = getRandomWord();
+        if (rerollPWords) while(newWord.startsWith("p")) newWord = getRandomWord();
+
+        tvRandomWord.setText(newWord);
+        if (hideWord) showWordFor1s();
     }
 
 
@@ -132,6 +137,7 @@ public class GameActivity extends AppCompatActivity {
         wordLengthMax = Integer.parseInt(sharedPreferences.getString(WORD_LENGTH_MAX, "20"));
         wordLengthMin = Integer.parseInt(sharedPreferences.getString(WORD_LENGTH_MIN, "1"));
         hideWord = sharedPreferences.getBoolean(HIDE_WORD, false);
+        rerollPWords = sharedPreferences.getBoolean(REROLL_WORDS_STARTING_WITH_P, false);
     }
 
     public void showSettings(View x)
