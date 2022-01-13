@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -49,6 +50,8 @@ public class GameActivity extends AppCompatActivity {
         tvRandomWord = findViewById(R.id.tvRandomWord);
         backgroundDiv = findViewById(R.id.backgroundDiv);
 
+        rerollWord();
+
         backgroundDiv.setOnTouchListener(new View.OnTouchListener() {
             @SuppressLint("ClickableViewAccessibility")
             @Override
@@ -77,12 +80,14 @@ public class GameActivity extends AppCompatActivity {
 
     public void setWordVisible()
     {
-        tvRandomWord.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+        tvRandomWord.setInputType(InputType.TYPE_CLASS_TEXT
+                | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
     }
 
     public void setWordInvisible()
     {
-        tvRandomWord.setInputType(InputType.TYPE_CLASS_TEXT |InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        tvRandomWord.setInputType(InputType.TYPE_CLASS_TEXT
+                | InputType.TYPE_TEXT_VARIATION_PASSWORD);
     }
 
     @Override
@@ -105,7 +110,12 @@ public class GameActivity extends AppCompatActivity {
         timer.start();
     }
 
-    public void rerollWord(View x)
+    public void rerollWordAdapter(View x)
+    {
+        rerollWord();
+    }
+
+    public void rerollWord()
     {
         int max = dictionary.length();
         int index = (int) Math.floor(Math.random()*max);
@@ -114,6 +124,7 @@ public class GameActivity extends AppCompatActivity {
             showWordFor1s();
         }
     }
+
 
     public void loadSettings()
     {
@@ -133,4 +144,11 @@ public class GameActivity extends AppCompatActivity {
         startActivity(new Intent(this, HelpActivity.class));
     }
 
+    public void googleTheWord(View v) {
+        Intent googleStuff = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("https://www.google.com/search?q=" +
+                        tvRandomWord.getText().toString().replace(" ", "+")));
+
+        startActivity(googleStuff);
+    }
 }

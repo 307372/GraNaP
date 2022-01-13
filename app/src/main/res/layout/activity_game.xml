@@ -25,7 +25,7 @@
         android:id="@+id/bReroll"
         android:layout_width="347dp"
         android:layout_height="wrap_content"
-        android:onClick="rerollWord"
+        android:onClick="rerollWordAdapter"
         android:text="Wylosuj inne"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,9 +40,26 @@
         android:minWidth="48dp"
         android:minHeight="48dp"
         android:onClick="showSettings"
+        android:tooltipText="Ustawienia"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_preferences"
+        app:tint="@color/green_terminal"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/bSettingsGame2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:onClick="googleTheWord"
+        android:tooltipText="Zgoogluj"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_search"
         app:tint="@color/green_terminal"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -54,6 +71,7 @@
         android:minWidth="48dp"
         android:minHeight="48dp"
         android:onClick="showHelp"
+        android:tooltipText="Zasady"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_help"
