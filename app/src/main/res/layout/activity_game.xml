@@ -24,6 +24,7 @@
         android:id="@+id/bReroll"
         android:layout_width="347dp"
         android:layout_height="wrap_content"
+        android:onClick="rerollWord"
         android:text="Wylosuj inne"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

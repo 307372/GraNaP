@@ -103,9 +103,19 @@ def filterOffRareWords(dict, min_count=1000):
         copied.pop(key)
     return copied
 
-def exportAs(data, path):
+def exportAsTxt(data, path):
     f = open(path, 'w')
-    f.write(data)
+    f.write('\n'.join(data))
+    f.close()
+
+def exportAsXml(data, path):
+    f = open(path, 'w')
+    outputData = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n    <array name=\"dict\">\n"
+    for word in data:
+        outputData += "        <item>" + word + "</item>\n"
+
+    outputData += "    </array>\n</resources>"
+    f.write(outputData)
     f.close()
 
 def mainMyspell():
@@ -123,7 +133,7 @@ def mainMyspell():
     print(len(res))
 
     # printHugeDict(res, 1000, True)
-    exportAs('\n'.join(res), 'dictionary.dat')
+    exportAsXml(res, 'dictionary.xml')
 
 if __name__ == '__main__':
     # tests()
