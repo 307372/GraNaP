@@ -1,4 +1,6 @@
 import copy
+import libXML
+import codecs
 
 MAIN_DICT_PATH = 'slownikfreq.txt'
 MAIN_DICT_FILTER_AFTER = '='
@@ -33,7 +35,7 @@ def printHugeDict(dict, lines=100, print_vertically=False):
 
 
 def loadDictAsList(path, ignoreLines=0):
-    f = open(path, 'r')
+    f = codecs.open(path, 'r', 'utf-8')
     res = [x.strip().lower() for x in f][ignoreLines:]
 
     f.close()
@@ -41,7 +43,7 @@ def loadDictAsList(path, ignoreLines=0):
 
 
 def loadDictAsListFiltered(path, custom_filter, ignoreLines=0):
-    f = open(path, 'r')
+    f = codecs.open(path, 'r', 'utf-8')
     res = [custom_filter(x).lower() for x in f if custom_filter(x) != -1][ignoreLines:]
 
     f.close()
@@ -103,20 +105,12 @@ def filterOffRareWords(dict, min_count=1000):
         copied.pop(key)
     return copied
 
+
 def exportAsTxt(data, path):
-    f = open(path, 'w')
+    f = codecs.open(path, 'w', 'utf-8')
     f.write('\n'.join(data))
     f.close()
 
-def exportAsXml(data, path):
-    f = open(path, 'w')
-    outputData = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n    <array name=\"dict\">\n"
-    for word in data:
-        outputData += "        <item>" + word + "</item>\n"
-
-    outputData += "    </array>\n</resources>"
-    f.write(outputData)
-    f.close()
 
 def mainMyspell():
     dictionary = loadDictAsList(MAIN_DICT_PATH, ignoreLines=MAIN_DICT_IGNOREDLINES)
@@ -132,8 +126,10 @@ def mainMyspell():
     res = findCommonPart(dictionary, comparator)
     print(len(res))
 
-    # printHugeDict(res, 1000, True)
-    exportAsXml(res, 'dictionary.xml')
+    res = sorted(res, key=len)
+    # printHugeDict(libXML.getLenIndexArray(res), 1000, True)
+    printHugeDict(res, 100, True)
+    libXML.exportAsXml(res, 'dictionary.xml')
 
 if __name__ == '__main__':
     # tests()
