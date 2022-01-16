@@ -15,7 +15,7 @@
         android:editable="false"
         android:ems="10"
         android:gravity="start|top"
-        android:text="ZASADY\n1. Po rozpoczęciu gry zostanie wylosowane hasło, zadaniem osoby mówiącej jest opisać hasło za pomocą słów na literę P.\n\n2. Reszta graczy ma za zadanie domyślić się jakie jest hasło. Można zadawać pytania przedstawiającemu.\n\n3. Po natrafieniu przez graczy na hasło, następuje zmiana osoby przedstawiającej, która losuje dla siebie hasło."
+        android:text="ZASADY\n1. Po rozpoczęciu gry zostanie wylosowane hasło, zadaniem osoby mówiącej jest opisać hasło za pomocą słów na literę P.\n\n2. Nie obawiaj się losować wielokrotnie, jeśli hasło jest zbyt łatwe / zbyt trudne.\n\n3. Reszta graczy ma za zadanie domyślić się jakie jest hasło. Można zadawać pytania przedstawiającemu.\n\n4. Po natrafieniu przez graczy na hasło, następuje zmiana osoby przedstawiającej.\n\nZasady są celowo dosyć ogólne - szczegóły ustalcie jak wam pasuje, ważniejsza od zasad jest dobra zabawa :)"
         app:layout_constraintBottom_toTopOf="@+id/bBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
