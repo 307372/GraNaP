@@ -10,34 +10,88 @@
     <TextView
         android:id="@+id/_tvWordLengthMin"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Minimalna długość haseł"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="Min"
+        app:layout_constraintBottom_toBottomOf="@+id/iWordLengthMin"
+        app:layout_constraintEnd_toStartOf="@+id/iWordLengthMin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iWordLengthMin" />
+
+    <View
+        android:id="@+id/_separator2"
+        style="@style/Divider"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iWordLengthMax" />
+
+    <View
+        android:id="@+id/view8"
+        style="@style/Divider"
+        android:layout_width="0dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:translationY="-8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/_tvWordLengthMin"
+        app:layout_constraintTop_toBottomOf="@+id/iWordLengthMin" />
+
+    <View
+        android:id="@+id/_separator3"
+        style="@style/Divider"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swHideWord" />
+
+    <View
+        android:id="@+id/_separator"
+        style="@style/Divider"
+        android:layout_marginTop="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_tvSettings" />
+
+    <View
+        android:id="@+id/view7"
+        style="@style/Divider"
+        android:layout_width="0dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:translationY="-8dp"
+        app:layout_constraintEnd_toEndOf="@+id/iWordLengthMax"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/_tvWordLengthMax"
         app:layout_constraintTop_toBottomOf="@+id/iWordLengthMax" />
 
     <TextView
         android:id="@+id/_tvHideWord"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Ukrywaj Hasło"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="Ukrywanie hasła"
         android:tooltipText="Przytrzymaj dowolne miejsce na ekranie gry aby hasło stało się widoczne."
         app:layout_constraintBottom_toBottomOf="@+id/swHideWord"
         app:layout_constraintEnd_toStartOf="@+id/swHideWord"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iWordLengthMin" />
+        app:layout_constraintTop_toTopOf="@+id/swHideWord"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/_tvRerollWordsStartingWithP"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Wyłącz słowa zaczynające się na P"
-        android:tooltipText="Przytrzymaj dowolne miejsce na ekranie gry aby hasło stało się widoczne."
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="Wyłącz słowa na P"
+        android:tooltipText="Słowa zaczynające się na literę P nigdy nie zostaną wylosowane"
         app:layout_constraintBottom_toBottomOf="@+id/swRerollWordsStartingWithP"
         app:layout_constraintEnd_toStartOf="@+id/swRerollWordsStartingWithP"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/swHideWord" />
+        app:layout_constraintTop_toTopOf="@+id/swRerollWordsStartingWithP" />
 
     <EditText
         android:id="@+id/iWordLengthMin"
@@ -45,21 +99,23 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
+        android:maxLength="3"
         android:minHeight="48dp"
         android:singleLine="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_tvWordLengthMin" />
+        app:layout_constraintTop_toBottomOf="@+id/tvWordLength"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/_tvWordLengthMax"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Maksymalna długość haseł"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="Max"
+        app:layout_constraintBottom_toBottomOf="@+id/iWordLengthMax"
+        app:layout_constraintEnd_toStartOf="@+id/iWordLengthMax"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/iWordLengthMax" />
 
     <EditText
         android:id="@+id/iWordLengthMax"
@@ -67,11 +123,12 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
+        android:maxLength="3"
         android:minHeight="48dp"
         android:singleLine="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_tvWordLengthMax" />
+        app:layout_constraintTop_toBottomOf="@+id/iWordLengthMin"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/bSaveSettings"
@@ -87,15 +144,43 @@
         android:id="@+id/swHideWord"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iWordLengthMin" />
+        app:layout_constraintTop_toBottomOf="@+id/_separator2"
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
 
     <Switch
         android:id="@+id/swRerollWordsStartingWithP"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/swHideWord" />
+        app:layout_constraintTop_toBottomOf="@+id/_separator3"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/tvWordLength"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:text="@string/dlugosc_hasel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_separator" />
+
+    <TextView
+        android:id="@+id/_tvSettings"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Ustawienia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

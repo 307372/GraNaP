@@ -6,6 +6,8 @@ import static com.example.granap.SettingsActivity.SHARED_PREFERENCES;
 import static com.example.granap.SettingsActivity.WORD_LENGTH_MAX;
 import static com.example.granap.SettingsActivity.WORD_LENGTH_MIN;
 
+import static java.lang.Math.min;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -19,6 +21,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.text.InputType;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +35,10 @@ public class GameActivity extends AppCompatActivity {
     ConstraintLayout backgroundDiv;
 
     TypedArray dictionary;
+    TypedArray dictWordLenAmounts;
+    TypedArray dictWordLenIndices;
+    int wordlengthMinAvailable;
+    int wordlengthMaxAvailable;
 
     int wordLengthMax;
     int wordLengthMin;
@@ -48,10 +55,7 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        dictionary = getResources().obtainTypedArray(R.array.dict);
-        tvRandomWord = findViewById(R.id.tvRandomWord);
-        backgroundDiv = findViewById(R.id.backgroundDiv);
-
+        loadResources();
         rerollWord();
 
         backgroundDiv.setOnTouchListener(new View.OnTouchListener() {
@@ -78,6 +82,19 @@ public class GameActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    private void loadResources()
+    {
+        Resources res = getResources();
+        dictionary = res.obtainTypedArray(R.array.dict);
+        dictWordLenAmounts = res.obtainTypedArray(R.array.len_amount);
+        dictWordLenIndices = res.obtainTypedArray(R.array.len_index);
+        wordlengthMinAvailable = res.getInteger(R.integer.min_len);
+        wordlengthMaxAvailable = res.getInteger(R.integer.max_len);
+
+        tvRandomWord = findViewById(R.id.tvRandomWord);
+        backgroundDiv = findViewById(R.id.backgroundDiv);
     }
 
     public void setWordVisible()
@@ -116,15 +133,31 @@ public class GameActivity extends AppCompatActivity {
 
     public String getRandomWord()
     {
-        int max = dictionary.length();
-        int index = (int) Math.floor(Math.random()*max);
+        int start = dictWordLenIndices.getInt(wordLengthMin, -1);
+        int stop = dictWordLenIndices.getInt(wordLengthMax, -1)
+                 + dictWordLenAmounts.getInt(wordLengthMax, -1);
+        // Log.i("wordLengthMin:", String.valueOf(wordLengthMin));
+        // Log.i("wordLengthMax:", String.valueOf(wordLengthMax));
+        assert dictWordLenIndices.getInt(wordLengthMin, -1) != -1;
+        assert dictWordLenIndices.getInt(wordLengthMax, -1) != -1;
+        assert dictWordLenAmounts.getInt(wordLengthMax, -1) != -1;
+
+        return getRandomWord(start, stop);
+    }
+
+    public String getRandomWord(int start, int stop)
+    {
+        int max = min(stop, dictionary.length());
+        int index = start + (int) Math.floor(Math.random()*(max-start));
+        // Log.i("random index:", String.valueOf(index));
         return dictionary.getString(index);
     }
 
     public void rerollWord()
     {
         String newWord = getRandomWord();
-        if (rerollPWords) while(newWord.startsWith("p")) newWord = getRandomWord();
+        // TODO: fix what happens when rerolling is happening
+        if (rerollPWords) while(newWord.startsWith("p")) newWord = getRandomWord(0, dictionary.length());
 
         tvRandomWord.setText(newWord);
         if (hideWord) showWordFor1s();

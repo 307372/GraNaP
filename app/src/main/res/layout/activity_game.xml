@@ -12,6 +12,7 @@
         android:id="@+id/tvRandomWord"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@null"
         android:gravity="center"
         android:text="Lorem Ipsium"
         android:textSize="20sp"
@@ -23,7 +24,7 @@
 
     <Button
         android:id="@+id/bReroll"
-        android:layout_width="347dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:onClick="rerollWordAdapter"
         android:text="Wylosuj inne"

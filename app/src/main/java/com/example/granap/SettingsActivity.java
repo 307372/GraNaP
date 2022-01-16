@@ -2,11 +2,15 @@ package com.example.granap;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.SharedPreferences;
+import android.graphics.Paint;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class SettingsActivity extends AppCompatActivity {
@@ -21,30 +25,67 @@ public class SettingsActivity extends AppCompatActivity {
     EditText iWordLengthMin;
     Switch swHideWord;
     Switch swRerollWordsStartingWithP;
+    TextView tvWordLength;
+
+    int minWordLen;
+    int maxWordLen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        iWordLengthMax = findViewById(R.id.iWordLengthMax);
-        iWordLengthMin = findViewById(R.id.iWordLengthMin);
+
         swHideWord = findViewById(R.id.swHideWord);
         swRerollWordsStartingWithP = findViewById(R.id.swRerollWordsStartingWithP);
 
+        setupWordLengthSettings();
+
         loadSettings();
+    }
+
+    private void setupWordLengthSettings()
+    {
+        minWordLen = getResources().getInteger(R.integer.min_len);
+        maxWordLen = getResources().getInteger(R.integer.max_len);
+
+        tvWordLength = findViewById(R.id.tvWordLength);
+        String wordLengthLabel = getResources().getText(R.string.dlugosc_hasel).toString()
+                + " (" + minWordLen + "-" + maxWordLen + ")";
+        tvWordLength.setText(wordLengthLabel);
+
+        iWordLengthMin = findViewById(R.id.iWordLengthMin);
+        iWordLengthMin.setOnFocusChangeListener(new OnFocusChangeListenerMin(minWordLen));
+        iWordLengthMin.setFilters(new InputFilter[]{new InputFilterMinMax(maxWordLen)});
+
+        iWordLengthMax = findViewById(R.id.iWordLengthMax);
+        iWordLengthMax.setOnFocusChangeListener(new OnFocusChangeListenerMin(minWordLen));
+        iWordLengthMax.setFilters(new InputFilter[]{new InputFilterMinMax(maxWordLen)});
     }
 
     public void loadSettings()
     {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
-        iWordLengthMax.setText(sharedPreferences.getString(WORD_LENGTH_MAX, "20"));
-        iWordLengthMin.setText(sharedPreferences.getString(WORD_LENGTH_MIN, "1"));
+        iWordLengthMax.setText(sharedPreferences.getString(WORD_LENGTH_MAX, ""+maxWordLen));
+        iWordLengthMin.setText(sharedPreferences.getString(WORD_LENGTH_MIN, ""+minWordLen));
         swHideWord.setChecked(sharedPreferences.getBoolean(HIDE_WORD, false));
         swRerollWordsStartingWithP.setChecked(sharedPreferences.getBoolean(REROLL_WORDS_STARTING_WITH_P, false));
     }
 
     public void saveSettings()
     {
+        // triggering value filters
+        iWordLengthMin.clearFocus();
+        iWordLengthMax.clearFocus();
+
+        int min = Integer.parseInt(String.valueOf(iWordLengthMin.getText()));
+        int max = Integer.parseInt(String.valueOf(iWordLengthMax.getText()));
+
+
+        if (min > max)
+        {
+            iWordLengthMax.setText(String.valueOf(min));
+        }
+
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 

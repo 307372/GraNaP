@@ -5,15 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="16dp"
+    android:focusable="false"
     tools:context=".HelpActivity">
 
     <EditText
         android:id="@+id/_textRules"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:editable="false"
         android:ems="10"
         android:gravity="start|top"
-        android:inputType="textMultiLine"
         android:text="ZASADY\n1. Po rozpoczęciu gry zostanie wylosowane hasło, zadaniem osoby mówiącej jest opisać hasło za pomocą słów na literę P.\n\n2. Reszta graczy ma za zadanie domyślić się jakie jest hasło. Można zadawać pytania przedstawiającemu.\n\n3. Po natrafieniu przez graczy na hasło, następuje zmiana osoby przedstawiającej, która losuje dla siebie hasło."
         app:layout_constraintBottom_toTopOf="@+id/bBack"
         app:layout_constraintEnd_toEndOf="parent"
