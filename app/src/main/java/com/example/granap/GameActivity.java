@@ -32,6 +32,7 @@ import java.io.FileInputStream;
 public class GameActivity extends AppCompatActivity {
 
     TextView tvRandomWord;
+    // TODO: turn off spell checking in tvRandomWord
     ConstraintLayout backgroundDiv;
 
     TypedArray dictionary;
