@@ -27,7 +27,6 @@ import android.widget.TextView;
 public class GameActivity extends AppCompatActivity {
 
     TextView tvRandomWord;
-    // TODO: turn off spell checking in tvRandomWord
     ConstraintLayout backgroundDiv;
 
     private TypedArray dictionary;
@@ -41,10 +40,24 @@ public class GameActivity extends AppCompatActivity {
     boolean hideWord;
     boolean rerollPWords;
 
+    static private String STATE_WORD = "stateWord";
+
     CountDownTimer timer = new CountDownTimer(1000, 100) {
         @Override public void onTick(long x) {}
         public void onFinish() {setWordInvisible();}
     };
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putString(STATE_WORD, tvRandomWord.getText().toString());
+
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        tvRandomWord.setText(savedInstanceState.getString(STATE_WORD));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +66,11 @@ public class GameActivity extends AppCompatActivity {
 
         loadResources();
         loadSettings();
-        rerollWord();
+
+        if (savedInstanceState != null) {
+            tvRandomWord.setText(savedInstanceState.getString(STATE_WORD));
+        }
+        else rerollWord();
 
         backgroundDiv.setOnTouchListener(new View.OnTouchListener() {
             @SuppressLint("ClickableViewAccessibility")
@@ -82,10 +99,22 @@ public class GameActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onPause() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(STATE_WORD, tvRandomWord.getText().toString());
+        editor.apply();
+
+        super.onPause();
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
 
         loadSettings();
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
+        tvRandomWord.setText(sharedPreferences.getString(STATE_WORD, getRandomWord()));
 
         if (hideWord) setWordInvisible();
         else setWordVisible();

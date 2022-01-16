@@ -80,7 +80,6 @@ public class SettingsActivity extends AppCompatActivity {
         int min = Integer.parseInt(String.valueOf(iWordLengthMin.getText()));
         int max = Integer.parseInt(String.valueOf(iWordLengthMax.getText()));
 
-
         if (min > max)
         {
             iWordLengthMax.setText(String.valueOf(min));
