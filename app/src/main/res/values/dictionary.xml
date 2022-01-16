@@ -1,85 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer name="min_len">2</integer>
-    <integer name="max_len">12</integer>
+    <integer name="max_len">17</integer>
     <array name="len_index">
         <item>0</item>
         <item>0</item>
         <item>0</item>
-        <item>3</item>
-        <item>98</item>
-        <item>262</item>
-        <item>480</item>
-        <item>695</item>
-        <item>821</item>
-        <item>921</item>
-        <item>981</item>
-        <item>1001</item>
-        <item>1009</item>
-        <item>1010</item>
+        <item>5</item>
+        <item>149</item>
+        <item>487</item>
+        <item>962</item>
+        <item>1460</item>
+        <item>1844</item>
+        <item>2132</item>
+        <item>2302</item>
+        <item>2395</item>
+        <item>2449</item>
+        <item>2461</item>
+        <item>2472</item>
+        <item>2480</item>
+        <item>2481</item>
+        <item>2482</item>
+        <item>2483</item>
     </array>
     <array name="len_amount">
         <item>0</item>
         <item>0</item>
-        <item>3</item>
-        <item>95</item>
-        <item>164</item>
-        <item>218</item>
-        <item>215</item>
-        <item>126</item>
-        <item>100</item>
-        <item>60</item>
-        <item>20</item>
+        <item>5</item>
+        <item>144</item>
+        <item>338</item>
+        <item>475</item>
+        <item>498</item>
+        <item>384</item>
+        <item>288</item>
+        <item>170</item>
+        <item>93</item>
+        <item>54</item>
+        <item>12</item>
+        <item>11</item>
         <item>8</item>
+        <item>1</item>
+        <item>1</item>
         <item>1</item>
     </array>
     <array name="dict">
         <item>ar</item>
         <item>as</item>
         <item>om</item>
+        <item>oś</item>
+        <item>ul</item>
         <item>akt</item>
         <item>aut</item>
+        <item>bal</item>
         <item>bar</item>
         <item>bas</item>
         <item>bat</item>
         <item>bob</item>
         <item>bok</item>
+        <item>ból</item>
         <item>bom</item>
         <item>bon</item>
         <item>bum</item>
         <item>but</item>
         <item>byk</item>
         <item>byt</item>
+        <item>cal</item>
         <item>cap</item>
         <item>car</item>
         <item>cel</item>
         <item>cud</item>
+        <item>dąb</item>
+        <item>dal</item>
         <item>dar</item>
         <item>dom</item>
         <item>dym</item>
         <item>elf</item>
+        <item>era</item>
         <item>gad</item>
         <item>gaj</item>
         <item>gaz</item>
         <item>gen</item>
+        <item>gęś</item>
+        <item>gra</item>
         <item>hak</item>
         <item>han</item>
         <item>hen</item>
+        <item>hol</item>
         <item>huk</item>
         <item>jad</item>
         <item>jak</item>
+        <item>jęk</item>
+        <item>jeż</item>
         <item>jon</item>
         <item>kac</item>
+        <item>kał</item>
         <item>kat</item>
+        <item>kąt</item>
+        <item>kęs</item>
         <item>kij</item>
         <item>kit</item>
         <item>koc</item>
         <item>kod</item>
         <item>kot</item>
         <item>kur</item>
+        <item>ląd</item>
+        <item>ład</item>
         <item>lak</item>
+        <item>łam</item>
+        <item>łan</item>
         <item>las</item>
+        <item>lej</item>
         <item>lek</item>
+        <item>lęk</item>
         <item>lew</item>
         <item>lin</item>
         <item>lis</item>
@@ -87,20 +119,36 @@
         <item>lot</item>
         <item>lud</item>
         <item>luk</item>
+        <item>łuk</item>
+        <item>łup</item>
+        <item>łyk</item>
+        <item>łza</item>
+        <item>mać</item>
         <item>mag</item>
         <item>maj</item>
         <item>mak</item>
         <item>mat</item>
+        <item>maź</item>
+        <item>miś</item>
         <item>mit</item>
+        <item>moc</item>
+        <item>muł</item>
         <item>mur</item>
+        <item>niż</item>
+        <item>noc</item>
         <item>nos</item>
+        <item>oda</item>
         <item>pak</item>
+        <item>pal</item>
         <item>pan</item>
         <item>pas</item>
         <item>pat</item>
+        <item>pęd</item>
+        <item>pęk</item>
         <item>pop</item>
         <item>por</item>
         <item>pot</item>
+        <item>pył</item>
         <item>rad</item>
         <item>raj</item>
         <item>rak</item>
@@ -108,14 +156,19 @@
         <item>rem</item>
         <item>ren</item>
         <item>rok</item>
+        <item>róż</item>
         <item>rum</item>
         <item>run</item>
         <item>ryk</item>
         <item>rym</item>
         <item>rys</item>
+        <item>ryż</item>
         <item>sad</item>
+        <item>sąd</item>
         <item>sam</item>
+        <item>sęk</item>
         <item>sen</item>
+        <item>sęp</item>
         <item>ser</item>
         <item>sok</item>
         <item>sos</item>
@@ -126,52 +179,97 @@
         <item>tok</item>
         <item>tom</item>
         <item>ton</item>
+        <item>toń</item>
         <item>tor</item>
+        <item>tył</item>
         <item>typ</item>
+        <item>wał</item>
+        <item>wić</item>
         <item>wir</item>
+        <item>woń</item>
         <item>wuj</item>
         <item>zad</item>
+        <item>żal</item>
+        <item>żar</item>
         <item>zew</item>
+        <item>żyd</item>
+        <item>alfa</item>
+        <item>apel</item>
+        <item>aria</item>
         <item>atak</item>
         <item>atut</item>
+        <item>aura</item>
+        <item>baba</item>
         <item>bank</item>
         <item>bark</item>
+        <item>baśń</item>
+        <item>baza</item>
+        <item>bela</item>
         <item>bicz</item>
         <item>bieg</item>
         <item>biel</item>
+        <item>bila</item>
         <item>blat</item>
         <item>blok</item>
+        <item>brać</item>
         <item>brak</item>
+        <item>brąz</item>
+        <item>broń</item>
         <item>brud</item>
         <item>bruk</item>
         <item>buch</item>
         <item>bunt</item>
+        <item>buta</item>
         <item>cech</item>
+        <item>cela</item>
+        <item>cena</item>
+        <item>cera</item>
         <item>cham</item>
+        <item>chęć</item>
         <item>chór</item>
+        <item>ciąg</item>
+        <item>cień</item>
         <item>cios</item>
         <item>cudo</item>
+        <item>cykl</item>
         <item>cyrk</item>
         <item>czar</item>
         <item>czas</item>
         <item>czek</item>
         <item>czyn</item>
+        <item>czyż</item>
         <item>dach</item>
+        <item>dama</item>
+        <item>data</item>
+        <item>dłoń</item>
+        <item>dług</item>
+        <item>dola</item>
         <item>drab</item>
+        <item>drąg</item>
+        <item>drań</item>
         <item>druk</item>
         <item>drut</item>
         <item>duch</item>
+        <item>duma</item>
+        <item>dupa</item>
         <item>dysk</item>
         <item>dzik</item>
         <item>dziw</item>
         <item>etap</item>
         <item>fakt</item>
+        <item>fala</item>
+        <item>faza</item>
         <item>fest</item>
         <item>film</item>
         <item>flet</item>
         <item>frak</item>
+        <item>gęba</item>
         <item>gest</item>
+        <item>głąb</item>
+        <item>głaz</item>
+        <item>głos</item>
         <item>gong</item>
+        <item>góra</item>
         <item>grad</item>
         <item>graf</item>
         <item>gram</item>
@@ -182,76 +280,176 @@
         <item>gryf</item>
         <item>gust</item>
         <item>gwar</item>
+        <item>hala</item>
         <item>hall</item>
+        <item>heca</item>
+        <item>hełm</item>
         <item>herb</item>
+        <item>hołd</item>
         <item>hymn</item>
+        <item>idea</item>
+        <item>igła</item>
+        <item>izba</item>
+        <item>jama</item>
+        <item>jola</item>
+        <item>juta</item>
         <item>kant</item>
+        <item>kara</item>
         <item>kark</item>
         <item>kask</item>
+        <item>kawa</item>
+        <item>kima</item>
+        <item>kłam</item>
         <item>klan</item>
         <item>klin</item>
         <item>klub</item>
         <item>knot</item>
+        <item>kora</item>
+        <item>kość</item>
         <item>kosz</item>
+        <item>koza</item>
         <item>krab</item>
         <item>kraj</item>
         <item>kres</item>
         <item>krok</item>
         <item>król</item>
         <item>kruk</item>
+        <item>ktoś</item>
+        <item>kula</item>
         <item>kult</item>
+        <item>kupa</item>
+        <item>kura</item>
         <item>kurs</item>
         <item>kurz</item>
         <item>kwas</item>
+        <item>lada</item>
+        <item>łąka</item>
+        <item>łapa</item>
         <item>lato</item>
+        <item>ława</item>
+        <item>lila</item>
+        <item>lina</item>
         <item>list</item>
+        <item>liza</item>
+        <item>lora</item>
         <item>lord</item>
+        <item>łotr</item>
+        <item>lufa</item>
+        <item>łuna</item>
+        <item>mama</item>
+        <item>mapa</item>
+        <item>mara</item>
         <item>mars</item>
+        <item>masa</item>
+        <item>maść</item>
+        <item>mata</item>
         <item>mech</item>
+        <item>mecz</item>
+        <item>męka</item>
+        <item>meta</item>
         <item>metr</item>
+        <item>mgła</item>
+        <item>miał</item>
+        <item>mila</item>
+        <item>mina</item>
+        <item>młot</item>
+        <item>młyn</item>
+        <item>moda</item>
         <item>mord</item>
+        <item>mość</item>
         <item>most</item>
+        <item>mowa</item>
         <item>mózg</item>
         <item>mrok</item>
+        <item>msza</item>
+        <item>myśl</item>
+        <item>mysz</item>
+        <item>noga</item>
+        <item>nora</item>
+        <item>nuda</item>
         <item>nurt</item>
+        <item>nuta</item>
+        <item>ogół</item>
         <item>ogon</item>
         <item>okaz</item>
         <item>okup</item>
+        <item>olej</item>
+        <item>opał</item>
         <item>opat</item>
         <item>opis</item>
+        <item>oręż</item>
         <item>osad</item>
         <item>owad</item>
         <item>owoc</item>
         <item>pakt</item>
+        <item>papa</item>
+        <item>para</item>
         <item>park</item>
+        <item>paść</item>
         <item>pech</item>
+        <item>piec</item>
+        <item>piła</item>
         <item>pisk</item>
         <item>plac</item>
         <item>plan</item>
         <item>plik</item>
+        <item>płot</item>
+        <item>pług</item>
         <item>plus</item>
+        <item>płyn</item>
         <item>polo</item>
+        <item>pora</item>
         <item>port</item>
         <item>post</item>
+        <item>poza</item>
+        <item>prąd</item>
+        <item>pręt</item>
         <item>prom</item>
         <item>ptak</item>
         <item>puch</item>
+        <item>pułk</item>
         <item>puls</item>
         <item>pysk</item>
+        <item>pyza</item>
+        <item>rada</item>
+        <item>rama</item>
+        <item>rana</item>
+        <item>rasa</item>
         <item>rejs</item>
+        <item>ręka</item>
         <item>ring</item>
+        <item>rola</item>
+        <item>ropa</item>
+        <item>rosa</item>
+        <item>róża</item>
         <item>ruch</item>
+        <item>ruda</item>
+        <item>rura</item>
+        <item>ryba</item>
         <item>rytm</item>
+        <item>rząd</item>
+        <item>rzeź</item>
         <item>rzut</item>
+        <item>saga</item>
+        <item>sala</item>
         <item>sejm</item>
         <item>seks</item>
         <item>sens</item>
+        <item>sieć</item>
+        <item>sień</item>
         <item>siew</item>
+        <item>siła</item>
         <item>skok</item>
+        <item>ślad</item>
+        <item>słoń</item>
+        <item>ślub</item>
+        <item>słup</item>
         <item>smak</item>
         <item>smok</item>
         <item>snop</item>
+        <item>sowa</item>
         <item>spis</item>
+        <item>stal</item>
         <item>stan</item>
         <item>staw</item>
         <item>stek</item>
@@ -262,16 +460,28 @@
         <item>stos</item>
         <item>stuk</item>
         <item>styl</item>
+        <item>suka</item>
+        <item>suma</item>
+        <item>swąd</item>
+        <item>świt</item>
+        <item>szal</item>
+        <item>szał</item>
         <item>szef</item>
         <item>szok</item>
         <item>szum</item>
         <item>szyb</item>
         <item>szyk</item>
         <item>takt</item>
+        <item>tara</item>
         <item>targ</item>
+        <item>tata</item>
         <item>tato</item>
+        <item>tera</item>
+        <item>teść</item>
         <item>test</item>
         <item>tlen</item>
+        <item>tłok</item>
+        <item>tłum</item>
         <item>tors</item>
         <item>tort</item>
         <item>traf</item>
@@ -280,178 +490,403 @@
         <item>trud</item>
         <item>trup</item>
         <item>tryb</item>
+        <item>tyka</item>
         <item>tynk</item>
+        <item>ucha</item>
+        <item>ulga</item>
         <item>unik</item>
+        <item>upał</item>
         <item>urok</item>
+        <item>waga</item>
         <item>widz</item>
         <item>wiec</item>
         <item>wiek</item>
+        <item>więź</item>
         <item>wilk</item>
+        <item>wina</item>
+        <item>właz</item>
+        <item>włos</item>
         <item>wnuk</item>
+        <item>woda</item>
         <item>wójt</item>
+        <item>wola</item>
         <item>wosk</item>
         <item>wrak</item>
+        <item>żaba</item>
+        <item>żart</item>
         <item>zbyt</item>
         <item>zgon</item>
+        <item>ziąb</item>
+        <item>zięć</item>
+        <item>zima</item>
+        <item>złom</item>
         <item>znak</item>
+        <item>żółć</item>
+        <item>żołd</item>
+        <item>żona</item>
+        <item>żubr</item>
         <item>zuch</item>
+        <item>zupa</item>
+        <item>zwał</item>
+        <item>żwir</item>
+        <item>żyła</item>
         <item>zysk</item>
         <item>adept</item>
         <item>adres</item>
+        <item>afera</item>
         <item>agent</item>
+        <item>akcja</item>
         <item>aktor</item>
         <item>alarm</item>
         <item>album</item>
+        <item>aleja</item>
+        <item>anioł</item>
+        <item>armia</item>
         <item>autor</item>
         <item>awans</item>
+        <item>babka</item>
+        <item>bagaż</item>
+        <item>bajka</item>
         <item>balon</item>
+        <item>banda</item>
         <item>barak</item>
         <item>baran</item>
         <item>baron</item>
+        <item>barwa</item>
         <item>basen</item>
+        <item>basta</item>
+        <item>belka</item>
         <item>beret</item>
         <item>beton</item>
+        <item>bieda</item>
         <item>bilet</item>
+        <item>bitwa</item>
         <item>biust</item>
         <item>blask</item>
         <item>blond</item>
+        <item>błysk</item>
+        <item>bomba</item>
+        <item>brama</item>
+        <item>broda</item>
+        <item>bryła</item>
+        <item>bryza</item>
         <item>brzeg</item>
+        <item>brzęk</item>
+        <item>bulwa</item>
+        <item>burza</item>
+        <item>całun</item>
+        <item>cecha</item>
         <item>chaos</item>
+        <item>chata</item>
         <item>chleb</item>
+        <item>chłop</item>
+        <item>chuda</item>
         <item>chwyt</item>
+        <item>ciecz</item>
+        <item>cisza</item>
+        <item>cnota</item>
+        <item>córka</item>
         <item>cygan</item>
         <item>cytat</item>
+        <item>cywil</item>
+        <item>czerń</item>
+        <item>część</item>
+        <item>czołg</item>
         <item>czort</item>
+        <item>delta</item>
         <item>demon</item>
         <item>deser</item>
+        <item>deska</item>
+        <item>donna</item>
         <item>dotyk</item>
+        <item>droga</item>
+        <item>dusza</item>
         <item>dywan</item>
+        <item>dyżur</item>
         <item>dzban</item>
         <item>dziad</item>
+        <item>dział</item>
         <item>dziób</item>
         <item>dzwon</item>
         <item>efekt</item>
+        <item>ekipa</item>
         <item>ekran</item>
+        <item>epoka</item>
         <item>facet</item>
+        <item>fałsz</item>
+        <item>farba</item>
+        <item>farma</item>
         <item>fetor</item>
+        <item>finał</item>
+        <item>firma</item>
         <item>fizyk</item>
+        <item>flaga</item>
+        <item>flora</item>
+        <item>flota</item>
+        <item>forma</item>
+        <item>forsa</item>
+        <item>fotel</item>
         <item>frank</item>
         <item>front</item>
+        <item>furia</item>
+        <item>garaż</item>
+        <item>garść</item>
+        <item>glina</item>
+        <item>głowa</item>
         <item>gmach</item>
         <item>gniew</item>
+        <item>gołąb</item>
         <item>gracz</item>
         <item>groch</item>
         <item>grosz</item>
+        <item>grota</item>
+        <item>groza</item>
         <item>grunt</item>
+        <item>grupa</item>
         <item>grzyb</item>
         <item>guzik</item>
+        <item>gwałt</item>
         <item>gwizd</item>
         <item>habit</item>
+        <item>hałas</item>
+        <item>hańba</item>
         <item>haust</item>
         <item>honor</item>
+        <item>hotel</item>
         <item>humor</item>
+        <item>ideał</item>
+        <item>ilość</item>
+        <item>iskra</item>
         <item>islam</item>
         <item>jacht</item>
+        <item>jazda</item>
+        <item>jeleń</item>
+        <item>jełop</item>
+        <item>jęzor</item>
+        <item>język</item>
+        <item>jucha</item>
         <item>kakao</item>
         <item>kamyk</item>
+        <item>kanał</item>
+        <item>karaś</item>
+        <item>karta</item>
         <item>katar</item>
+        <item>kawał</item>
         <item>kciuk</item>
+        <item>kilka</item>
+        <item>klacz</item>
+        <item>klapa</item>
+        <item>klasa</item>
+        <item>kłoda</item>
         <item>klops</item>
+        <item>klucz</item>
         <item>kogut</item>
         <item>kojot</item>
+        <item>kolej</item>
+        <item>koleś</item>
         <item>kolor</item>
         <item>komin</item>
         <item>konar</item>
         <item>konik</item>
+        <item>kopia</item>
         <item>koszt</item>
         <item>kowal</item>
         <item>kozak</item>
+        <item>krata</item>
+        <item>krowa</item>
+        <item>krtań</item>
         <item>krzak</item>
         <item>krzyk</item>
+        <item>krzyż</item>
+        <item>kulka</item>
+        <item>kurka</item>
         <item>kuzyn</item>
         <item>kwiat</item>
+        <item>lalka</item>
+        <item>lampa</item>
+        <item>laska</item>
+        <item>łaska</item>
         <item>legat</item>
+        <item>linia</item>
+        <item>lista</item>
+        <item>łobuz</item>
+        <item>łódka</item>
+        <item>lokaj</item>
+        <item>lokal</item>
+        <item>łomot</item>
+        <item>łowca</item>
         <item>lunch</item>
+        <item>macka</item>
+        <item>magia</item>
         <item>major</item>
+        <item>małpa</item>
+        <item>mania</item>
+        <item>manna</item>
+        <item>marsz</item>
+        <item>maska</item>
         <item>mason</item>
         <item>maszt</item>
+        <item>matka</item>
+        <item>medal</item>
         <item>medyk</item>
+        <item>metal</item>
+        <item>miecz</item>
         <item>minus</item>
+        <item>misja</item>
         <item>mnich</item>
+        <item>model</item>
         <item>motor</item>
+        <item>motyl</item>
         <item>motyw</item>
+        <item>mówca</item>
         <item>mucha</item>
         <item>muzyk</item>
         <item>nadal</item>
         <item>nakaz</item>
         <item>nalot</item>
         <item>napad</item>
+        <item>napęd</item>
         <item>napis</item>
+        <item>nauka</item>
         <item>nawyk</item>
+        <item>nazwa</item>
+        <item>nędza</item>
         <item>nijak</item>
         <item>notes</item>
         <item>numer</item>
+        <item>obawa</item>
         <item>obiad</item>
         <item>obieg</item>
         <item>objaw</item>
+        <item>obłęd</item>
+        <item>obłok</item>
         <item>obraz</item>
+        <item>obręb</item>
         <item>obrus</item>
         <item>ocean</item>
+        <item>ocena</item>
         <item>oczko</item>
         <item>odlew</item>
         <item>odwet</item>
         <item>ogier</item>
         <item>ogrom</item>
         <item>okres</item>
+        <item>okręt</item>
+        <item>opera</item>
         <item>organ</item>
+        <item>osada</item>
+        <item>osoba</item>
+        <item>pająk</item>
         <item>paker</item>
+        <item>pałac</item>
+        <item>panna</item>
+        <item>papla</item>
+        <item>pasja</item>
+        <item>pasza</item>
         <item>patio</item>
         <item>patyk</item>
+        <item>pauza</item>
         <item>pazur</item>
+        <item>pedał</item>
         <item>peron</item>
+        <item>pętla</item>
         <item>piach</item>
+        <item>piana</item>
+        <item>pierś</item>
+        <item>pięść</item>
+        <item>pieśń</item>
         <item>pijak</item>
+        <item>piłka</item>
         <item>pilot</item>
         <item>pirat</item>
+        <item>płacz</item>
+        <item>plama</item>
+        <item>plaża</item>
         <item>plusk</item>
+        <item>płyta</item>
         <item>pobyt</item>
+        <item>poeta</item>
+        <item>pogoń</item>
         <item>pokaz</item>
+        <item>pomoc</item>
         <item>posag</item>
+        <item>posąg</item>
         <item>potok</item>
         <item>potop</item>
+        <item>pożar</item>
+        <item>praca</item>
+        <item>prasa</item>
+        <item>próba</item>
         <item>proch</item>
         <item>punkt</item>
+        <item>pycha</item>
         <item>rabin</item>
+        <item>racja</item>
         <item>radar</item>
+        <item>radca</item>
         <item>radio</item>
         <item>rejon</item>
+        <item>rękaw</item>
         <item>rekin</item>
         <item>robak</item>
         <item>robot</item>
         <item>rower</item>
         <item>rozum</item>
+        <item>ruina</item>
         <item>rumak</item>
         <item>rybak</item>
+        <item>rybka</item>
+        <item>rzecz</item>
+        <item>rzeka</item>
         <item>sabat</item>
         <item>salon</item>
+        <item>salwa</item>
+        <item>scena</item>
         <item>seans</item>
         <item>sedno</item>
+        <item>seria</item>
+        <item>setka</item>
         <item>sezon</item>
+        <item>sfera</item>
         <item>sierp</item>
+        <item>skała</item>
         <item>skarb</item>
+        <item>skład</item>
         <item>sklep</item>
+        <item>skóra</item>
         <item>skraj</item>
+        <item>skręt</item>
+        <item>skroń</item>
         <item>skrót</item>
+        <item>sława</item>
+        <item>ślina</item>
+        <item>słoik</item>
+        <item>słuch</item>
+        <item>sługa</item>
+        <item>smoła</item>
+        <item>smuga</item>
+        <item>smycz</item>
+        <item>śnieg</item>
+        <item>śpiew</item>
         <item>splot</item>
         <item>sport</item>
         <item>spryt</item>
         <item>spust</item>
+        <item>środa</item>
         <item>start</item>
+        <item>stępa</item>
+        <item>stopa</item>
+        <item>straż</item>
         <item>stres</item>
         <item>strop</item>
+        <item>stróż</item>
         <item>stryj</item>
         <item>sufit</item>
+        <item>świat</item>
+        <item>świst</item>
         <item>szach</item>
+        <item>szafa</item>
+        <item>szata</item>
         <item>szejk</item>
         <item>szept</item>
         <item>szewc</item>
@@ -460,31 +895,63 @@
         <item>szlak</item>
         <item>szmer</item>
         <item>sznur</item>
+        <item>szopa</item>
+        <item>szosa</item>
         <item>szron</item>
         <item>sztab</item>
+        <item>szyba</item>
         <item>szych</item>
         <item>szyfr</item>
+        <item>szyja</item>
         <item>szyld</item>
+        <item>talia</item>
         <item>taran</item>
         <item>taras</item>
+        <item>taśma</item>
+        <item>tatuś</item>
         <item>teatr</item>
         <item>tekst</item>
         <item>temat</item>
         <item>tenor</item>
         <item>teren</item>
         <item>toast</item>
+        <item>torba</item>
         <item>towar</item>
+        <item>trąba</item>
         <item>trakt</item>
         <item>trans</item>
+        <item>trasa</item>
+        <item>trawa</item>
+        <item>treść</item>
+        <item>troll</item>
+        <item>trupa</item>
         <item>tuman</item>
+        <item>tunel</item>
         <item>tupot</item>
         <item>tutaj</item>
         <item>tuzin</item>
+        <item>twarz</item>
         <item>tyran</item>
+        <item>tytoń</item>
+        <item>tytuł</item>
         <item>ucisk</item>
+        <item>uczta</item>
+        <item>układ</item>
+        <item>ukłon</item>
+        <item>ulewa</item>
+        <item>ulica</item>
+        <item>umowa</item>
+        <item>umysł</item>
+        <item>upływ</item>
         <item>upust</item>
         <item>urlop</item>
+        <item>uroda</item>
+        <item>ustęp</item>
+        <item>uwaga</item>
         <item>wagon</item>
+        <item>walka</item>
+        <item>warga</item>
+        <item>warta</item>
         <item>wazon</item>
         <item>wdech</item>
         <item>welon</item>
@@ -493,323 +960,802 @@
         <item>wiatr</item>
         <item>wideo</item>
         <item>widok</item>
+        <item>wieść</item>
+        <item>wieża</item>
+        <item>willa</item>
+        <item>winda</item>
         <item>wirus</item>
+        <item>wizja</item>
         <item>wjazd</item>
+        <item>wkład</item>
+        <item>wódka</item>
+        <item>wojna</item>
+        <item>wpływ</item>
+        <item>wstęp</item>
         <item>wstyd</item>
+        <item>wyłom</item>
         <item>wylot</item>
         <item>wynik</item>
         <item>wypad</item>
         <item>wyraz</item>
         <item>wyrok</item>
+        <item>wyspa</item>
         <item>wzrok</item>
+        <item>żądza</item>
+        <item>zając</item>
         <item>zakaz</item>
         <item>zakon</item>
         <item>zakup</item>
+        <item>zamęt</item>
+        <item>zapał</item>
         <item>zapas</item>
         <item>zapis</item>
         <item>zarys</item>
+        <item>zawał</item>
         <item>zbieg</item>
         <item>zegar</item>
+        <item>zgoda</item>
+        <item>zgoła</item>
         <item>zimno</item>
+        <item>zjawa</item>
         <item>zjazd</item>
+        <item>złość</item>
+        <item>żmija</item>
+        <item>zmora</item>
         <item>zmrok</item>
+        <item>zmysł</item>
         <item>zwrot</item>
+        <item>żywot</item>
         <item>absurd</item>
         <item>akcent</item>
+        <item>aluzja</item>
         <item>amulet</item>
         <item>aparat</item>
         <item>apetyt</item>
+        <item>arkusz</item>
         <item>aromat</item>
         <item>asfalt</item>
         <item>aspekt</item>
+        <item>awaria</item>
+        <item>babcia</item>
+        <item>badacz</item>
         <item>balkon</item>
+        <item>bałwan</item>
+        <item>bandaż</item>
         <item>barbet</item>
         <item>barman</item>
+        <item>beczka</item>
+        <item>bełkot</item>
+        <item>bestia</item>
+        <item>biblia</item>
         <item>biedak</item>
         <item>biskup</item>
         <item>biznes</item>
+        <item>błękit</item>
+        <item>blizna</item>
         <item>bocian</item>
+        <item>bogini</item>
+        <item>boleść</item>
         <item>bosman</item>
         <item>brunet</item>
         <item>brzask</item>
         <item>brzuch</item>
+        <item>budowa</item>
         <item>budzik</item>
         <item>bukiet</item>
+        <item>bzdura</item>
+        <item>całość</item>
         <item>cesarz</item>
+        <item>chmura</item>
+        <item>chwała</item>
+        <item>chwila</item>
+        <item>ciężar</item>
+        <item>ciocia</item>
+        <item>ciotka</item>
+        <item>ćwierć</item>
+        <item>czapka</item>
         <item>daniel</item>
         <item>dekret</item>
         <item>delfin</item>
         <item>deszcz</item>
         <item>dialog</item>
+        <item>dobroć</item>
         <item>docent</item>
         <item>doktor</item>
+        <item>dolina</item>
         <item>domiar</item>
+        <item>domysł</item>
+        <item>dopływ</item>
+        <item>dostęp</item>
         <item>dowcip</item>
         <item>dramat</item>
+        <item>dwójka</item>
         <item>dyplom</item>
+        <item>działo</item>
         <item>dzikus</item>
+        <item>dziura</item>
+        <item>dziwka</item>
+        <item>dźwięk</item>
         <item>egoizm</item>
         <item>epizod</item>
         <item>faraon</item>
         <item>farmer</item>
+        <item>figura</item>
+        <item>fizyka</item>
+        <item>furtka</item>
+        <item>gąszcz</item>
+        <item>gazeta</item>
+        <item>gloria</item>
+        <item>główka</item>
+        <item>gorycz</item>
         <item>granat</item>
+        <item>groźba</item>
         <item>grubas</item>
+        <item>grupka</item>
         <item>grymas</item>
         <item>grzech</item>
         <item>grzmot</item>
         <item>haczyk</item>
         <item>hazard</item>
         <item>hetman</item>
+        <item>hrabia</item>
+        <item>idiota</item>
+        <item>iluzja</item>
         <item>impuls</item>
         <item>intruz</item>
+        <item>ironia</item>
+        <item>istota</item>
+        <item>jagoda</item>
         <item>jaguar</item>
+        <item>jakość</item>
+        <item>jesień</item>
         <item>junior</item>
+        <item>kabina</item>
+        <item>kaczka</item>
+        <item>kadłub</item>
         <item>kaftan</item>
+        <item>kaktus</item>
+        <item>kaleka</item>
+        <item>kalina</item>
+        <item>kałuża</item>
+        <item>kamera</item>
+        <item>kamień</item>
+        <item>kanapa</item>
+        <item>kąpiel</item>
+        <item>kapłan</item>
+        <item>kapral</item>
         <item>kaprys</item>
         <item>kaptur</item>
+        <item>kartka</item>
         <item>karton</item>
         <item>kelner</item>
+        <item>klamka</item>
+        <item>klatka</item>
+        <item>klątwa</item>
+        <item>klęska</item>
         <item>klient</item>
         <item>klimat</item>
+        <item>klinga</item>
+        <item>kłopot</item>
         <item>kodeks</item>
+        <item>kolega</item>
+        <item>kometa</item>
         <item>kompas</item>
         <item>koniak</item>
         <item>konsul</item>
+        <item>kopuła</item>
+        <item>korona</item>
         <item>korpus</item>
+        <item>korzeń</item>
         <item>kosmos</item>
         <item>kosmyk</item>
+        <item>kostka</item>
         <item>koszyk</item>
+        <item>kozioł</item>
+        <item>kożuch</item>
+        <item>kraina</item>
         <item>krater</item>
         <item>krawat</item>
         <item>kredyt</item>
+        <item>kreska</item>
         <item>kretyn</item>
         <item>królik</item>
+        <item>kropka</item>
+        <item>kropla</item>
         <item>krytyk</item>
         <item>kryzys</item>
+        <item>księga</item>
         <item>kurier</item>
+        <item>kurtka</item>
+        <item>łajdak</item>
         <item>lament</item>
+        <item>lampka</item>
+        <item>lawina</item>
         <item>legion</item>
+        <item>lekarz</item>
+        <item>lekcja</item>
+        <item>liczba</item>
+        <item>litera</item>
+        <item>litość</item>
+        <item>logika</item>
+        <item>łoskot</item>
         <item>lotnik</item>
         <item>luksus</item>
         <item>magnes</item>
         <item>malarz</item>
         <item>manewr</item>
+        <item>marina</item>
         <item>markiz</item>
         <item>marmur</item>
         <item>meteor</item>
+        <item>metoda</item>
         <item>milion</item>
+        <item>miłość</item>
+        <item>minuta</item>
         <item>mister</item>
         <item>mistrz</item>
         <item>moment</item>
+        <item>moneta</item>
         <item>mundur</item>
         <item>murzyn</item>
+        <item>muszka</item>
+        <item>muzyka</item>
+        <item>myszka</item>
         <item>nacisk</item>
+        <item>nagość</item>
         <item>namiot</item>
+        <item>napaść</item>
+        <item>narada</item>
+        <item>natura</item>
+        <item>niania</item>
+        <item>nicość</item>
+        <item>niemoc</item>
         <item>nocleg</item>
+        <item>nowina</item>
+        <item>nowość</item>
         <item>obiekt</item>
+        <item>obręcz</item>
+        <item>obrona</item>
         <item>obszar</item>
+        <item>ochota</item>
+        <item>odcień</item>
         <item>odcisk</item>
         <item>odczyt</item>
         <item>oddech</item>
+        <item>odgłos</item>
         <item>odjazd</item>
+        <item>odmowa</item>
+        <item>odpływ</item>
         <item>odruch</item>
+        <item>odwaga</item>
+        <item>odzież</item>
+        <item>oferta</item>
         <item>ofiara</item>
         <item>oficer</item>
+        <item>okazja</item>
         <item>okrzyk</item>
+        <item>ołtarz</item>
+        <item>opieka</item>
+        <item>opinia</item>
         <item>orszak</item>
         <item>orzech</item>
+        <item>oścież</item>
+        <item>osłona</item>
         <item>oszust</item>
+        <item>oznaka</item>
+        <item>paczka</item>
         <item>pakiet</item>
+        <item>pamięć</item>
         <item>panicz</item>
+        <item>panika</item>
         <item>papier</item>
+        <item>papież</item>
+        <item>papuga</item>
         <item>parter</item>
+        <item>partia</item>
         <item>pastor</item>
+        <item>patrol</item>
+        <item>pejzaż</item>
+        <item>pełnia</item>
+        <item>piątka</item>
         <item>piecyk</item>
+        <item>pieprz</item>
         <item>piorun</item>
+        <item>pisarz</item>
         <item>placyk</item>
         <item>plakat</item>
         <item>plecak</item>
+        <item>płomyk</item>
+        <item>plotka</item>
         <item>pluton</item>
+        <item>płytka</item>
+        <item>pociąg</item>
         <item>pocisk</item>
+        <item>poczta</item>
         <item>podest</item>
         <item>podpis</item>
+        <item>podróż</item>
         <item>podziw</item>
         <item>poemat</item>
+        <item>poezja</item>
+        <item>pogląd</item>
+        <item>pogoda</item>
         <item>pojazd</item>
         <item>pokarm</item>
+        <item>pokład</item>
         <item>pokoik</item>
+        <item>pokusa</item>
+        <item>polana</item>
+        <item>północ</item>
+        <item>połowa</item>
+        <item>połysk</item>
         <item>pomnik</item>
         <item>pomost</item>
         <item>pomruk</item>
+        <item>pomysł</item>
+        <item>porcja</item>
+        <item>poręcz</item>
+        <item>portal</item>
+        <item>pościg</item>
         <item>posmak</item>
+        <item>postać</item>
         <item>postaw</item>
+        <item>postęp</item>
+        <item>potęga</item>
+        <item>powaga</item>
         <item>powiew</item>
         <item>poziom</item>
+        <item>prawda</item>
         <item>prezes</item>
         <item>proces</item>
+        <item>profil</item>
         <item>promyk</item>
         <item>prorok</item>
+        <item>prośba</item>
         <item>prymas</item>
         <item>prymus</item>
         <item>przeor</item>
         <item>puchar</item>
         <item>pulpit</item>
+        <item>pustka</item>
+        <item>puszka</item>
+        <item>radość</item>
         <item>raport</item>
+        <item>reguła</item>
         <item>rekord</item>
         <item>rektor</item>
         <item>remont</item>
+        <item>reszta</item>
+        <item>robota</item>
+        <item>rodzaj</item>
         <item>romans</item>
         <item>rozkaz</item>
         <item>rycerz</item>
+        <item>rytuał</item>
+        <item>rządca</item>
+        <item>rzeźba</item>
+        <item>samica</item>
+        <item>sąsiad</item>
+        <item>ściąga</item>
+        <item>ściana</item>
+        <item>sędzia</item>
+        <item>sekcja</item>
         <item>sekret</item>
         <item>senior</item>
         <item>serwis</item>
+        <item>siatka</item>
+        <item>sierść</item>
         <item>silnik</item>
+        <item>skarga</item>
         <item>skowyt</item>
+        <item>skurcz</item>
+        <item>słowik</item>
+        <item>służba</item>
+        <item>śmiech</item>
+        <item>śmierć</item>
+        <item>sobota</item>
+        <item>sojusz</item>
+        <item>sonata</item>
         <item>spacer</item>
+        <item>spółka</item>
+        <item>sprawa</item>
+        <item>sprzęt</item>
+        <item>stacja</item>
         <item>stanik</item>
         <item>status</item>
+        <item>stawka</item>
+        <item>sterta</item>
         <item>stolik</item>
         <item>strach</item>
         <item>strajk</item>
+        <item>strata</item>
+        <item>strefa</item>
+        <item>strona</item>
+        <item>struna</item>
         <item>strych</item>
+        <item>strzał</item>
+        <item>strzęp</item>
         <item>studio</item>
         <item>stukot</item>
         <item>sukces</item>
+        <item>suknia</item>
+        <item>sułtan</item>
         <item>surdut</item>
+        <item>świeca</item>
+        <item>świnia</item>
+        <item>sygnał</item>
+        <item>symbol</item>
+        <item>syrena</item>
         <item>system</item>
+        <item>szabla</item>
+        <item>szakal</item>
         <item>szalik</item>
         <item>szaman</item>
+        <item>szansa</item>
         <item>szatan</item>
+        <item>szczęk</item>
         <item>szczur</item>
         <item>szczyt</item>
         <item>szereg</item>
         <item>szeryf</item>
+        <item>szkoda</item>
+        <item>szkoła</item>
         <item>szloch</item>
         <item>szofer</item>
         <item>szpieg</item>
         <item>sztorm</item>
+        <item>sztuka</item>
         <item>szturm</item>
         <item>szwank</item>
+        <item>szybka</item>
         <item>talent</item>
+        <item>talerz</item>
+        <item>tarcza</item>
+        <item>tatuaż</item>
         <item>tchórz</item>
+        <item>teczka</item>
+        <item>teoria</item>
         <item>termin</item>
         <item>terror</item>
+        <item>tętent</item>
         <item>traper</item>
+        <item>tratwa</item>
         <item>trener</item>
         <item>triumf</item>
+        <item>trójka</item>
+        <item>troska</item>
+        <item>trumna</item>
+        <item>trwoga</item>
         <item>trybun</item>
         <item>trzask</item>
         <item>turban</item>
         <item>turkot</item>
+        <item>twórca</item>
         <item>tygrys</item>
+        <item>tysiąc</item>
         <item>uchwyt</item>
+        <item>udział</item>
+        <item>ufność</item>
+        <item>uścisk</item>
+        <item>utrata</item>
+        <item>waćpan</item>
         <item>wampir</item>
         <item>wariat</item>
         <item>warkot</item>
+        <item>wdzięk</item>
+        <item>wersja</item>
+        <item>wiedza</item>
+        <item>wiersz</item>
+        <item>wilgoć</item>
+        <item>wioska</item>
+        <item>wiosna</item>
+        <item>wizyta</item>
+        <item>władca</item>
+        <item>władza</item>
         <item>wrzask</item>
+        <item>wrzawa</item>
+        <item>wstręt</item>
         <item>wulkan</item>
         <item>wybuch</item>
         <item>wyczyn</item>
         <item>wydruk</item>
+        <item>wygląd</item>
         <item>wyjazd</item>
+        <item>wykład</item>
         <item>wymiar</item>
         <item>wyrzut</item>
+        <item>wyścig</item>
+        <item>występ</item>
         <item>wywiad</item>
         <item>wzrost</item>
+        <item>zabawa</item>
         <item>zabieg</item>
         <item>zaduch</item>
+        <item>zakład</item>
         <item>zakres</item>
+        <item>zakręt</item>
+        <item>zalewa</item>
+        <item>załoga</item>
         <item>zamach</item>
         <item>zamiar</item>
         <item>zapach</item>
+        <item>zapaść</item>
+        <item>zaraza</item>
         <item>zarost</item>
+        <item>zarząd</item>
         <item>zarzut</item>
+        <item>zasada</item>
+        <item>zasięg</item>
+        <item>zatoka</item>
+        <item>zawiść</item>
+        <item>zbroja</item>
+        <item>zdrada</item>
+        <item>żebrak</item>
+        <item>zemsta</item>
         <item>zestaw</item>
         <item>zeszyt</item>
+        <item>zgiełk</item>
+        <item>zgraja</item>
+        <item>zgroza</item>
         <item>zgrzyt</item>
+        <item>zieleń</item>
+        <item>ziemia</item>
+        <item>zmiana</item>
+        <item>znawca</item>
         <item>zwierz</item>
+        <item>żywioł</item>
+        <item>admirał</item>
         <item>adwokat</item>
+        <item>agencja</item>
+        <item>alkohol</item>
+        <item>ambicja</item>
+        <item>analiza</item>
+        <item>arsenał</item>
+        <item>artykuł</item>
+        <item>artysta</item>
         <item>autobus</item>
         <item>automat</item>
+        <item>babunia</item>
+        <item>bałagan</item>
+        <item>bandyta</item>
         <item>bankier</item>
         <item>banknot</item>
+        <item>bariera</item>
         <item>bastion</item>
         <item>bezruch</item>
+        <item>bladość</item>
         <item>blondyn</item>
         <item>bohater</item>
+        <item>brodacz</item>
+        <item>brygada</item>
+        <item>brzytwa</item>
+        <item>budowla</item>
+        <item>butelka</item>
+        <item>cenzura</item>
         <item>chichot</item>
         <item>chirurg</item>
+        <item>chłopak</item>
         <item>chodnik</item>
+        <item>cholera</item>
+        <item>choroba</item>
+        <item>chrzęst</item>
         <item>czajnik</item>
+        <item>cząstka</item>
+        <item>czaszka</item>
+        <item>czeluść</item>
+        <item>czułość</item>
         <item>czynnik</item>
+        <item>decyzja</item>
+        <item>depesza</item>
         <item>diament</item>
+        <item>długość</item>
+        <item>doradca</item>
+        <item>dowódca</item>
+        <item>dozorca</item>
+        <item>drabina</item>
+        <item>dreszcz</item>
+        <item>drużyna</item>
         <item>dylemat</item>
         <item>dystans</item>
+        <item>dywizja</item>
+        <item>działka</item>
         <item>dziekan</item>
+        <item>dziewka</item>
+        <item>dżungla</item>
         <item>egzamin</item>
         <item>ekspert</item>
         <item>element</item>
+        <item>energia</item>
+        <item>eskorta</item>
+        <item>fabryka</item>
         <item>fartuch</item>
         <item>fenomen</item>
+        <item>figurka</item>
         <item>filozof</item>
         <item>folwark</item>
+        <item>forteca</item>
+        <item>fortuna</item>
         <item>fryzjer</item>
+        <item>fundusz</item>
+        <item>funkcja</item>
         <item>gabinet</item>
+        <item>garstka</item>
+        <item>generał</item>
+        <item>geniusz</item>
+        <item>głośnik</item>
+        <item>głupota</item>
+        <item>godność</item>
+        <item>godzina</item>
+        <item>gospoda</item>
+        <item>granica</item>
+        <item>gromada</item>
         <item>grzbiet</item>
+        <item>gwardia</item>
+        <item>gwiazda</item>
+        <item>herbata</item>
         <item>huragan</item>
         <item>interes</item>
+        <item>inwazja</item>
         <item>jarmark</item>
+        <item>jasność</item>
+        <item>jedność</item>
+        <item>jejmość</item>
+        <item>jemioła</item>
+        <item>jubiler</item>
+        <item>judaizm</item>
+        <item>kanibal</item>
+        <item>kapitał</item>
         <item>kapitan</item>
+        <item>kaplica</item>
         <item>karabin</item>
         <item>karawan</item>
+        <item>karetka</item>
+        <item>kariera</item>
         <item>kawaler</item>
         <item>kielich</item>
+        <item>kieszeń</item>
         <item>klakson</item>
+        <item>klawisz</item>
         <item>klejnot</item>
+        <item>kłótnia</item>
         <item>kluczyk</item>
+        <item>kobieta</item>
+        <item>kolacja</item>
+        <item>kolejka</item>
+        <item>kolonia</item>
+        <item>kolumna</item>
+        <item>komedia</item>
+        <item>komenda</item>
+        <item>komisja</item>
         <item>komitet</item>
+        <item>komnata</item>
+        <item>komórka</item>
         <item>komplet</item>
         <item>koncert</item>
         <item>kongres</item>
         <item>konkurs</item>
+        <item>konował</item>
         <item>kontakt</item>
+        <item>koperta</item>
+        <item>korzyść</item>
         <item>kostium</item>
         <item>koszmar</item>
+        <item>koszula</item>
+        <item>krawędź</item>
+        <item>krytyka</item>
+        <item>krzywda</item>
+        <item>krzyżyk</item>
+        <item>książka</item>
+        <item>księżyc</item>
+        <item>kształt</item>
         <item>kucharz</item>
+        <item>kuchnia</item>
+        <item>kultura</item>
+        <item>kurtyna</item>
         <item>kwadrat</item>
         <item>kwartet</item>
+        <item>kwatera</item>
+        <item>kwestia</item>
         <item>kwestor</item>
         <item>lampart</item>
+        <item>łańcuch</item>
+        <item>latania</item>
+        <item>latarka</item>
+        <item>łatwość</item>
+        <item>legenda</item>
+        <item>lektura</item>
         <item>licznik</item>
         <item>literat</item>
         <item>lombard</item>
+        <item>ludność</item>
+        <item>machina</item>
+        <item>mądrość</item>
         <item>magazyn</item>
+        <item>makijaż</item>
+        <item>maksyma</item>
+        <item>mamusia</item>
+        <item>maszyna</item>
+        <item>materac</item>
+        <item>materia</item>
         <item>mecenas</item>
+        <item>melodia</item>
+        <item>mgiełka</item>
+        <item>miesiąc</item>
+        <item>mikołaj</item>
         <item>miliard</item>
+        <item>milicja</item>
+        <item>miotacz</item>
+        <item>młodość</item>
+        <item>młodzik</item>
+        <item>młynarz</item>
         <item>monitor</item>
         <item>monolog</item>
+        <item>motłoch</item>
+        <item>możność</item>
         <item>nadmiar</item>
+        <item>nagroda</item>
+        <item>niechęć</item>
         <item>niesmak</item>
+        <item>niewola</item>
         <item>nonsens</item>
+        <item>notatka</item>
+        <item>obrońca</item>
+        <item>obsługa</item>
+        <item>obyczaj</item>
+        <item>ochrona</item>
         <item>odblask</item>
+        <item>oddział</item>
+        <item>odmiana</item>
+        <item>okolica</item>
         <item>olbrzym</item>
         <item>opiekun</item>
         <item>ordynat</item>
         <item>osobnik</item>
+        <item>ostrość</item>
         <item>oszczep</item>
+        <item>otchłań</item>
+        <item>pacierz</item>
         <item>pacjent</item>
         <item>pancerz</item>
+        <item>pantera</item>
         <item>parapet</item>
+        <item>parasol</item>
         <item>parkiet</item>
         <item>parking</item>
         <item>partner</item>
+        <item>pasażer</item>
+        <item>pasterz</item>
+        <item>pęcherz</item>
+        <item>pewność</item>
+        <item>pieczęć</item>
+        <item>pieczeń</item>
+        <item>piwnica</item>
+        <item>planeta</item>
+        <item>płaszcz</item>
+        <item>płomień</item>
         <item>podjazd</item>
+        <item>podłoga</item>
+        <item>podłość</item>
         <item>podmuch</item>
+        <item>podstęp</item>
+        <item>podział</item>
+        <item>pogarda</item>
         <item>pogrzeb</item>
+        <item>pokrywa</item>
+        <item>policja</item>
         <item>polityk</item>
+        <item>półmrok</item>
+        <item>pomyłka</item>
+        <item>popłoch</item>
+        <item>porażka</item>
+        <item>portfel</item>
         <item>portier</item>
         <item>portret</item>
+        <item>pościel</item>
+        <item>postawa</item>
+        <item>powieść</item>
+        <item>powłoka</item>
+        <item>pozycja</item>
         <item>praktyk</item>
         <item>prawnik</item>
         <item>prefekt</item>
@@ -820,229 +1766,766 @@
         <item>produkt</item>
         <item>program</item>
         <item>projekt</item>
+        <item>promień</item>
         <item>protest</item>
         <item>przegub</item>
         <item>przejaw</item>
         <item>przekaz</item>
+        <item>przełaj</item>
+        <item>przełom</item>
+        <item>przemoc</item>
         <item>przepis</item>
+        <item>przerwa</item>
         <item>przymus</item>
+        <item>pułapka</item>
+        <item>puszcza</item>
+        <item>rakieta</item>
+        <item>reakcja</item>
+        <item>ręcznik</item>
         <item>refleks</item>
         <item>rejestr</item>
+        <item>reklama</item>
+        <item>rękopis</item>
+        <item>relacja</item>
+        <item>religia</item>
         <item>respekt</item>
+        <item>resztka</item>
+        <item>reżyser</item>
         <item>rocznik</item>
+        <item>rodzina</item>
+        <item>roślina</item>
         <item>rosomak</item>
+        <item>równina</item>
+        <item>rozgłos</item>
+        <item>rozkład</item>
+        <item>rozkosz</item>
         <item>rozmiar</item>
+        <item>rozmowa</item>
+        <item>różnica</item>
+        <item>rozpacz</item>
+        <item>rzemień</item>
+        <item>rzeźnik</item>
         <item>samolot</item>
         <item>schemat</item>
+        <item>ścieżka</item>
+        <item>sekunda</item>
         <item>senator</item>
+        <item>senność</item>
+        <item>sierota</item>
+        <item>siostra</item>
+        <item>skandal</item>
         <item>sklepik</item>
+        <item>skorupa</item>
+        <item>słabość</item>
+        <item>słodycz</item>
+        <item>słownik</item>
+        <item>śpiewak</item>
+        <item>sprawka</item>
+        <item>starość</item>
         <item>sternik</item>
+        <item>stokroć</item>
+        <item>stolica</item>
         <item>strumyk</item>
+        <item>strużka</item>
+        <item>strzała</item>
         <item>student</item>
+        <item>studnia</item>
+        <item>swoboda</item>
         <item>szampan</item>
+        <item>szantaż</item>
+        <item>szarość</item>
+        <item>szczęka</item>
         <item>szelest</item>
+        <item>szpital</item>
         <item>sztylet</item>
+        <item>tablica</item>
+        <item>taktyka</item>
         <item>tapczan</item>
         <item>technik</item>
         <item>telefon</item>
+        <item>tłumacz</item>
+        <item>tłuszcz</item>
+        <item>torpeda</item>
         <item>traktat</item>
+        <item>tramwaj</item>
         <item>trawnik</item>
         <item>trening</item>
+        <item>trójkąt</item>
+        <item>turysta</item>
+        <item>uliczka</item>
         <item>uniform</item>
+        <item>uśmiech</item>
+        <item>walizka</item>
         <item>wariant</item>
+        <item>warkocz</item>
+        <item>warstwa</item>
+        <item>wartość</item>
+        <item>wehikuł</item>
         <item>werdykt</item>
+        <item>wichura</item>
+        <item>wiedźma</item>
         <item>wierzch</item>
         <item>wilczur</item>
+        <item>wolność</item>
+        <item>woźnica</item>
+        <item>wrogość</item>
+        <item>wstrząs</item>
+        <item>wydawca</item>
+        <item>wydział</item>
+        <item>wymiana</item>
+        <item>wyprawa</item>
+        <item>zabawka</item>
+        <item>zabójca</item>
         <item>zachwyt</item>
+        <item>zagadka</item>
+        <item>zagłada</item>
+        <item>żandarm</item>
+        <item>żarówka</item>
+        <item>zasłona</item>
+        <item>zasługa</item>
+        <item>zdobycz</item>
+        <item>zdrajca</item>
+        <item>żeglarz</item>
         <item>zwyczaj</item>
+        <item>żywność</item>
         <item>adiutant</item>
+        <item>akademia</item>
+        <item>aptekarz</item>
         <item>argument</item>
         <item>astronom</item>
         <item>asystent</item>
         <item>atrament</item>
+        <item>awantura</item>
+        <item>baczność</item>
+        <item>bagażnik</item>
         <item>batalion</item>
+        <item>bielizna</item>
+        <item>bliskość</item>
+        <item>blondyna</item>
         <item>bursztyn</item>
+        <item>centrala</item>
+        <item>chciwość</item>
+        <item>ciemność</item>
+        <item>cmentarz</item>
+        <item>czerwień</item>
+        <item>czujność</item>
+        <item>czynność</item>
+        <item>czystość</item>
         <item>detektyw</item>
+        <item>długopis</item>
+        <item>dobranoc</item>
         <item>dobrobyt</item>
         <item>dokument</item>
         <item>drobiazg</item>
         <item>dyrektor</item>
+        <item>dyskusja</item>
+        <item>działacz</item>
         <item>dzieciak</item>
         <item>dziedzic</item>
         <item>dziennik</item>
+        <item>dziewica</item>
         <item>estragon</item>
+        <item>ewolucja</item>
+        <item>fantazja</item>
+        <item>fontanna</item>
         <item>fotograf</item>
         <item>fragment</item>
         <item>garnitur</item>
         <item>garnizon</item>
+        <item>gliniarz</item>
         <item>gniewosz</item>
+        <item>gorączka</item>
+        <item>gotowość</item>
+        <item>gromadka</item>
+        <item>grzebień</item>
+        <item>handlarz</item>
+        <item>harmonia</item>
+        <item>hipoteza</item>
+        <item>historia</item>
         <item>historyk</item>
         <item>horyzont</item>
         <item>incydent</item>
         <item>instynkt</item>
         <item>instytut</item>
         <item>intelekt</item>
+        <item>intuicja</item>
+        <item>inżynier</item>
+        <item>iskierka</item>
+        <item>jaskinia</item>
+        <item>jegomość</item>
+        <item>kampania</item>
         <item>kanclerz</item>
         <item>kandydat</item>
+        <item>kapelusz</item>
+        <item>karawana</item>
+        <item>kardynał</item>
+        <item>kierowca</item>
         <item>kilometr</item>
         <item>klasztor</item>
+        <item>kołnierz</item>
         <item>komandor</item>
         <item>komandos</item>
+        <item>komisarz</item>
+        <item>kompania</item>
         <item>kompleks</item>
         <item>komputer</item>
         <item>komunizm</item>
         <item>konflikt</item>
         <item>kontrakt</item>
         <item>kontrast</item>
+        <item>kontrola</item>
+        <item>kopalnia</item>
+        <item>korytarz</item>
+        <item>kradzież</item>
+        <item>kryjówka</item>
+        <item>kryształ</item>
         <item>kwadrans</item>
         <item>labirynt</item>
+        <item>łączność</item>
+        <item>latarnia</item>
+        <item>łazienka</item>
+        <item>limuzyna</item>
+        <item>lodziarz</item>
+        <item>ludzkość</item>
+        <item>marynarz</item>
+        <item>materiał</item>
         <item>mechanik</item>
         <item>medalion</item>
+        <item>medycyna</item>
         <item>mikrofon</item>
+        <item>młodzian</item>
+        <item>młodzież</item>
+        <item>modlitwa</item>
+        <item>monarcha</item>
+        <item>morderca</item>
+        <item>motocykl</item>
         <item>nadajnik</item>
+        <item>nadzieja</item>
+        <item>nadzorca</item>
+        <item>naiwność</item>
         <item>narkotyk</item>
         <item>narrator</item>
+        <item>następca</item>
         <item>notatnik</item>
+        <item>obecność</item>
         <item>obiektyw</item>
+        <item>obywatel</item>
+        <item>odrobina</item>
         <item>ogrodnik</item>
+        <item>ojczyzna</item>
+        <item>operacja</item>
         <item>operator</item>
+        <item>opowieść</item>
         <item>organizm</item>
+        <item>oryginał</item>
+        <item>pamiątka</item>
+        <item>panienka</item>
         <item>papieros</item>
         <item>paradoks</item>
         <item>paszport</item>
         <item>pergamin</item>
+        <item>personel</item>
+        <item>pianista</item>
+        <item>piechota</item>
+        <item>piękność</item>
+        <item>piosenka</item>
+        <item>piramida</item>
         <item>pistolet</item>
+        <item>pociecha</item>
+        <item>podsłuch</item>
+        <item>podstawa</item>
         <item>pojemnik</item>
+        <item>polityka</item>
         <item>pomocnik</item>
+        <item>pośpiech</item>
         <item>postrach</item>
+        <item>poświata</item>
+        <item>potrzeba</item>
+        <item>praktyka</item>
+        <item>prędkość</item>
+        <item>premiera</item>
         <item>pretekst</item>
         <item>profesor</item>
+        <item>protokół</item>
         <item>prowiant</item>
+        <item>próżność</item>
         <item>prysznic</item>
         <item>przebieg</item>
+        <item>przeciąg</item>
+        <item>przegląd</item>
         <item>przejazd</item>
+        <item>przekład</item>
+        <item>przełęcz</item>
+        <item>przemysł</item>
+        <item>przepaść</item>
+        <item>przepływ</item>
         <item>przepych</item>
+        <item>przesada</item>
+        <item>przewaga</item>
         <item>przybysz</item>
         <item>przycisk</item>
+        <item>przygoda</item>
         <item>przyjazd</item>
+        <item>przyjaźń</item>
+        <item>przykład</item>
+        <item>przypływ</item>
+        <item>przyroda</item>
+        <item>przyrząd</item>
+        <item>przystań</item>
+        <item>pustynia</item>
         <item>rachunek</item>
+        <item>redakcja</item>
         <item>redaktor</item>
+        <item>rękojeść</item>
+        <item>reportaż</item>
         <item>reporter</item>
         <item>rewolwer</item>
         <item>rezultat</item>
         <item>robotnik</item>
+        <item>rozdział</item>
+        <item>rozmówca</item>
+        <item>rozprawa</item>
+        <item>rozrywka</item>
         <item>rzecznik</item>
         <item>scyzoryk</item>
+        <item>siedziba</item>
+        <item>sierżant</item>
         <item>skarbnik</item>
+        <item>skrzynia</item>
+        <item>skrzynka</item>
+        <item>ślizgacz</item>
+        <item>śmiałość</item>
+        <item>śmietnik</item>
         <item>sobowtór</item>
+        <item>spektakl</item>
+        <item>spódnica</item>
+        <item>spowiedź</item>
         <item>sprzeciw</item>
+        <item>sprzedaż</item>
+        <item>starosta</item>
+        <item>starucha</item>
+        <item>strażnik</item>
+        <item>strumień</item>
+        <item>strzałka</item>
+        <item>strzelba</item>
+        <item>sugestia</item>
+        <item>sukienka</item>
+        <item>surowość</item>
+        <item>świętość</item>
+        <item>świeżość</item>
+        <item>sylwetka</item>
+        <item>symfonia</item>
+        <item>sympatia</item>
+        <item>sytuacja</item>
+        <item>szczegół</item>
         <item>szkielet</item>
+        <item>szklanka</item>
+        <item>szlachta</item>
         <item>szlafrok</item>
         <item>sztandar</item>
+        <item>sztuczka</item>
         <item>szwadron</item>
+        <item>szybkość</item>
+        <item>taksówka</item>
         <item>talizman</item>
+        <item>technika</item>
         <item>telegram</item>
         <item>teleskop</item>
+        <item>tęsknota</item>
+        <item>tradycja</item>
+        <item>tragedia</item>
+        <item>trucizna</item>
+        <item>trudność</item>
+        <item>twierdza</item>
         <item>tygodnik</item>
+        <item>ucieczka</item>
+        <item>urzędnik</item>
+        <item>wachlarz</item>
         <item>warsztat</item>
+        <item>waszmość</item>
+        <item>wędrówka</item>
+        <item>wesołość</item>
+        <item>wielkość</item>
+        <item>wierność</item>
+        <item>wieśniak</item>
         <item>wietrzyk</item>
+        <item>wilkołak</item>
+        <item>własność</item>
+        <item>włóczęga</item>
         <item>wodospad</item>
+        <item>wojewoda</item>
         <item>wojownik</item>
+        <item>wskaźnik</item>
         <item>wspólnik</item>
+        <item>wysokość</item>
+        <item>wystrzał</item>
+        <item>wyższość</item>
+        <item>wzmianka</item>
         <item>zagajnik</item>
         <item>zakonnik</item>
+        <item>zarządca</item>
+        <item>zastępca</item>
         <item>zastrzyk</item>
         <item>zaszczyt</item>
+        <item>zazdrość</item>
         <item>zbiornik</item>
+        <item>zbrodnia</item>
+        <item>zdolność</item>
+        <item>złodziej</item>
         <item>zmierzch</item>
+        <item>żołnierz</item>
+        <item>życiorys</item>
+        <item>żywopłot</item>
+        <item>aktywność</item>
         <item>ambasador</item>
+        <item>aparatura</item>
         <item>architekt</item>
+        <item>artyleria</item>
+        <item>atmosfera</item>
         <item>autorytet</item>
         <item>burmistrz</item>
         <item>centymetr</item>
+        <item>ceremonia</item>
         <item>charakter</item>
+        <item>chłopczyk</item>
+        <item>ciekawość</item>
         <item>czarownik</item>
         <item>czytelnik</item>
+        <item>delegacja</item>
+        <item>dyplomata</item>
         <item>dziadunio</item>
+        <item>dziedzina</item>
+        <item>dzielnica</item>
+        <item>eksplozja</item>
         <item>entuzjazm</item>
+        <item>filozofia</item>
+        <item>formularz</item>
         <item>fortepian</item>
         <item>generator</item>
         <item>gentleman</item>
+        <item>głębokość</item>
+        <item>gospodarz</item>
         <item>imperator</item>
         <item>inspektor</item>
+        <item>jednostka</item>
+        <item>kalendarz</item>
         <item>karczmarz</item>
         <item>kasztelan</item>
+        <item>kawaleria</item>
         <item>kierownik</item>
+        <item>kolejność</item>
         <item>komendant</item>
+        <item>komentarz</item>
         <item>kompromis</item>
         <item>komunikat</item>
+        <item>koncepcja</item>
         <item>konduktor</item>
         <item>kontynent</item>
         <item>krajobraz</item>
         <item>krasnolud</item>
+        <item>krążownik</item>
+        <item>kręgosłup</item>
         <item>królewicz</item>
+        <item>łagodność</item>
+        <item>listonosz</item>
+        <item>lojalność</item>
+        <item>marynarka</item>
         <item>matematyk</item>
+        <item>mechanika</item>
         <item>mechanizm</item>
+        <item>mężczyzna</item>
         <item>milicjant</item>
+        <item>modliszka</item>
+        <item>moralność</item>
+        <item>możliwość</item>
         <item>naczelnik</item>
         <item>napastnik</item>
         <item>naszyjnik</item>
         <item>nawigator</item>
+        <item>niedziela</item>
+        <item>nienawiść</item>
+        <item>niepamięć</item>
+        <item>nieprawda</item>
+        <item>nietoperz</item>
+        <item>nieufność</item>
+        <item>niewiasta</item>
         <item>niewolnik</item>
+        <item>oberżysta</item>
+        <item>obietnica</item>
         <item>odbiornik</item>
+        <item>odległość</item>
+        <item>odporność</item>
+        <item>odpowiedź</item>
+        <item>okropność</item>
+        <item>orkiestra</item>
+        <item>osobowość</item>
+        <item>pajęczyna</item>
+        <item>pamiętnik</item>
         <item>pielgrzym</item>
+        <item>pierścień</item>
+        <item>płaskowyż</item>
+        <item>platforma</item>
+        <item>pochodnia</item>
         <item>podoficer</item>
+        <item>pokojówka</item>
         <item>policjant</item>
         <item>porucznik</item>
+        <item>potencjał</item>
+        <item>powinność</item>
         <item>pracownik</item>
         <item>prezydent</item>
         <item>proboszcz</item>
+        <item>procedura</item>
+        <item>produkcja</item>
+        <item>prostokąt</item>
         <item>przedmiot</item>
+        <item>przedział</item>
+        <item>przemiana</item>
+        <item>przyczyna</item>
+        <item>przydział</item>
+        <item>przykrość</item>
+        <item>przysięga</item>
         <item>przywilej</item>
+        <item>przywódca</item>
         <item>pseudonim</item>
         <item>psycholog</item>
+        <item>pułkownik</item>
         <item>pustelnik</item>
         <item>reflektor</item>
         <item>regulamin</item>
+        <item>republika</item>
+        <item>rewolucja</item>
         <item>rotmistrz</item>
+        <item>równowaga</item>
+        <item>rzemiosło</item>
+        <item>samotność</item>
+        <item>sekretarz</item>
+        <item>skłonność</item>
+        <item>skromność</item>
+        <item>słuszność</item>
+        <item>śmieciarz</item>
         <item>socjalizm</item>
+        <item>sprawność</item>
+        <item>staruszka</item>
+        <item>strategia</item>
+        <item>struktura</item>
+        <item>światłość</item>
+        <item>świątynia</item>
+        <item>sypialnia</item>
         <item>szambelan</item>
+        <item>szczelina</item>
         <item>szczeniak</item>
+        <item>szczerość</item>
+        <item>szczygieł</item>
         <item>szczypior</item>
+        <item>szerokość</item>
         <item>szlachcic</item>
+        <item>tabliczka</item>
+        <item>tajemnica</item>
+        <item>telewizja</item>
         <item>telewizor</item>
         <item>testament</item>
+        <item>towarzysz</item>
+        <item>tożsamość</item>
         <item>transport</item>
+        <item>twórczość</item>
+        <item>uczciwość</item>
         <item>uczestnik</item>
         <item>wartownik</item>
+        <item>wiadomość</item>
+        <item>wieczność</item>
+        <item>większość</item>
+        <item>wiewiórka</item>
+        <item>wskazówka</item>
+        <item>wycieczka</item>
+        <item>wypowiedź</item>
+        <item>wysłannik</item>
+        <item>zapowiedź</item>
+        <item>zawartość</item>
+        <item>znajomość</item>
+        <item>zręczność</item>
+        <item>zwiadowca</item>
+        <item>zwycięzca</item>
         <item>apartament</item>
         <item>arcybiskup</item>
+        <item>bezradność</item>
+        <item>bezsenność</item>
+        <item>biblioteka</item>
+        <item>błyskawica</item>
         <item>bombardier</item>
+        <item>ciężarówka</item>
+        <item>czarodziej</item>
+        <item>czarownica</item>
+        <item>dostojność</item>
+        <item>dyscyplina</item>
+        <item>dżentelmen</item>
+        <item>dziewczyna</item>
+        <item>egzemplarz</item>
+        <item>ekspedycja</item>
+        <item>fotografia</item>
+        <item>furgonetka</item>
+        <item>grzeczność</item>
         <item>gubernator</item>
         <item>helikopter</item>
+        <item>informacja</item>
+        <item>instrukcja</item>
         <item>instruktor</item>
         <item>instrument</item>
+        <item>instytucja</item>
+        <item>jaszczurka</item>
         <item>kamerdyner</item>
+        <item>katastrofa</item>
+        <item>kołnierzyk</item>
         <item>kombinezon</item>
         <item>komplement</item>
         <item>kompozytor</item>
+        <item>literatura</item>
+        <item>lokomotywa</item>
         <item>magnetofon</item>
         <item>maszynopis</item>
+        <item>matematyka</item>
+        <item>mieszanina</item>
         <item>namiestnik</item>
+        <item>namiętność</item>
+        <item>nauczyciel</item>
+        <item>niedźwiedź</item>
+        <item>niemożność</item>
+        <item>niepewność</item>
+        <item>niewinność</item>
+        <item>obojętność</item>
+        <item>obserwacja</item>
         <item>obserwator</item>
+        <item>ochroniarz</item>
+        <item>opatrzność</item>
+        <item>ostrożność</item>
+        <item>patriarcha</item>
+        <item>piszczałka</item>
+        <item>podręcznik</item>
+        <item>posiadłość</item>
         <item>prokurator</item>
+        <item>propaganda</item>
+        <item>propozycja</item>
         <item>przeciwnik</item>
+        <item>przestępca</item>
         <item>przestrach</item>
+        <item>przestrzeń</item>
+        <item>przeszkoda</item>
+        <item>przeszłość</item>
         <item>przewodnik</item>
+        <item>przewoźnik</item>
+        <item>przyszłość</item>
+        <item>psychiatra</item>
+        <item>rezygnacja</item>
+        <item>roślinność</item>
+        <item>scenariusz</item>
+        <item>sposobność</item>
+        <item>sprzedawca</item>
+        <item>substancja</item>
+        <item>świadomość</item>
+        <item>taksówkarz</item>
+        <item>twarzyczka</item>
+        <item>uprzejmość</item>
         <item>wachmistrz</item>
+        <item>wątpliwość</item>
+        <item>widoczność</item>
+        <item>właściciel</item>
+        <item>właściwość</item>
+        <item>wrażliwość</item>
+        <item>wściekłość</item>
+        <item>wspinaczka</item>
+        <item>współpraca</item>
+        <item>wyobraźnia</item>
+        <item>wytrwałość</item>
+        <item>zbrodniarz</item>
+        <item>złośliwość</item>
+        <item>życzliwość</item>
+        <item>barbarzyńca</item>
+        <item>bezczelność</item>
+        <item>cierpliwość</item>
+        <item>cywilizacja</item>
+        <item>delikatność</item>
         <item>departament</item>
+        <item>doskonałość</item>
+        <item>działalność</item>
+        <item>dziennikarz</item>
+        <item>dziewczynka</item>
+        <item>ekscelencja</item>
         <item>eksperyment</item>
+        <item>interwencja</item>
+        <item>kałamarnica</item>
+        <item>konferencja</item>
+        <item>konieczność</item>
+        <item>konstrukcja</item>
+        <item>miejscowość</item>
         <item>nieboszczyk</item>
+        <item>nieobecność</item>
+        <item>nieśmiałość</item>
+        <item>niszczyciel</item>
         <item>odpowiednik</item>
         <item>ogniomistrz</item>
+        <item>okoliczność</item>
+        <item>organizacja</item>
+        <item>październik</item>
+        <item>perspektywa</item>
+        <item>popularność</item>
+        <item>poszukiwacz</item>
+        <item>pozostałość</item>
+        <item>prawdziwość</item>
+        <item>przełącznik</item>
+        <item>przyjemność</item>
+        <item>przytomność</item>
+        <item>publiczność</item>
+        <item>restauracja</item>
+        <item>sanitariusz</item>
+        <item>serdeczność</item>
+        <item>skuteczność</item>
+        <item>solidarność</item>
+        <item>specjalista</item>
+        <item>specjalność</item>
+        <item>społeczność</item>
+        <item>sprzeczność</item>
+        <item>strzelanina</item>
         <item>temperament</item>
+        <item>temperatura</item>
         <item>transporter</item>
+        <item>umiejętność</item>
         <item>uniwersytet</item>
+        <item>uroczystość</item>
+        <item>wdzięczność</item>
+        <item>wszechświat</item>
+        <item>bibliotekarz</item>
+        <item>czarodziejka</item>
+        <item>ewentualność</item>
+        <item>inteligencja</item>
+        <item>niezależność</item>
         <item>podporucznik</item>
+        <item>podpułkownik</item>
+        <item>powierzchnia</item>
+        <item>przychylność</item>
+        <item>różnorodność</item>
+        <item>szlachetność</item>
+        <item>wytrzymałość</item>
+        <item>częstotliwość</item>
+        <item>elektryczność</item>
+        <item>nieostrożność</item>
+        <item>niepodległość</item>
+        <item>niespodzianka</item>
+        <item>podejrzliwość</item>
+        <item>podświadomość</item>
+        <item>przynależność</item>
+        <item>recepcjonista</item>
+        <item>rzeczywistość</item>
+        <item>świątobliwość</item>
+        <item>czarnoksiężnik</item>
+        <item>funkcjonariusz</item>
+        <item>korespondencja</item>
+        <item>niecierpliwość</item>
+        <item>nieskończoność</item>
+        <item>przedstawiciel</item>
+        <item>sprawiedliwość</item>
+        <item>teraźniejszość</item>
+        <item>nieśmiertelność</item>
+        <item>odpowiedzialność</item>
+        <item>niesprawiedliwość</item>
     </array>
 </resources>

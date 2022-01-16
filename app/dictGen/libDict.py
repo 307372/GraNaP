@@ -12,14 +12,17 @@ HELPER_DICT_FILTER_AFTER = ','
 HELPER_DICT_CONVERTER = lambda key: [key.split(HELPER_DICT_FILTER_AFTER)[0], 1]
 
 MYSPELL_DICT_PATH = 'myspell/pl_PL.dic'
-MYSPELL_DICT_NOUN_PATTERN = '/N'
+MYSPELL_IMPROVED_DICT_PATH = 'myspell/experimental/utf8.dic'
+MYSPELL_DICT_TAG_NOUN = 'N'
+MYSPELL_DICT_TAG_SEPARATOR = '/'
 
 
 def myspell_filter(line):
-    index = line.find(MYSPELL_DICT_NOUN_PATTERN)
-    if (index != -1):
-        return line[:index]
-    return index
+    index = line.find(MYSPELL_DICT_TAG_SEPARATOR)
+    if index != -1:
+        if MYSPELL_DICT_TAG_NOUN in line[index:]:
+            return line[:index]
+    return False
 
 
 def filterOffAfterSymbol(iterable, symbol='='):
@@ -44,7 +47,7 @@ def loadDictAsList(path, ignoreLines=0):
 
 def loadDictAsListFiltered(path, custom_filter, ignoreLines=0):
     f = codecs.open(path, 'r', 'utf-8')
-    res = [custom_filter(x).lower() for x in f if custom_filter(x) != -1][ignoreLines:]
+    res = [custom_filter(x).lower() for x in f if custom_filter(x)][ignoreLines:]
 
     f.close()
     return res
@@ -64,8 +67,32 @@ def list2dict(list, pair_generator):
 def filterCommonPart(lhs, rhs):
     return [line for line in lhs if not rhs.get(line)]
 
+
 def findCommonPart(lhs, rhs):
     return [line for line in lhs if rhs.get(line)]
+
+
+def separateCommonPart(lhs, rhs):
+    return [findCommonPart(lhs, rhs), filterCommonPart(lhs, rhs)]
+
+
+def countSymbols(stringList):
+    dict = {}
+    for word in stringList:
+        for sym in word:
+            if sym in dict.keys():
+                dict[sym] += 1
+            else:
+                dict[sym] = 1
+
+    return dict
+
+
+def checkForCorruptedSymbols(stringList):
+    symbols = countSymbols(stringList)
+    for key in symbols.keys():
+        if key not in "qwertyuiopasdfghjklzxcvbnmńżółąśźęć":
+            print(key, symbols[key])
 
 
 def tests():
@@ -120,16 +147,22 @@ def mainMyspell():
     dictionary = filterOffRareWords(dictionary, 250)
     print('after:', len(dictionary))
 
-    comparator = loadDictAsListFiltered(MYSPELL_DICT_PATH, myspell_filter, 0)
+    comparator = loadDictAsListFiltered(MYSPELL_IMPROVED_DICT_PATH, myspell_filter, 0)
     comparator = list2dict(comparator, HELPER_DICT_CONVERTER)
 
     res = findCommonPart(dictionary, comparator)
+    # res = filterCommonPart(dictionary, comparator)
+    # res, leftover = separateCommonPart(dictionary, comparator)
     print(len(res))
 
     res = sorted(res, key=len)
     # printHugeDict(libXML.getLenIndexArray(res), 1000, True)
-    printHugeDict(res, 100, True)
+    # printHugeDict(leftover, 1000, True)
+    # print(comparator)
+
+
     libXML.exportAsXml(res, 'dictionary.xml')
+    # exportAsTxt(comparator.keys(), 'comparator.txt')
 
 if __name__ == '__main__':
     # tests()
