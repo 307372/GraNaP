@@ -19,15 +19,10 @@ import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.os.Handler;
 import android.text.InputType;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
-
-import java.io.FileInputStream;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -35,14 +30,14 @@ public class GameActivity extends AppCompatActivity {
     // TODO: turn off spell checking in tvRandomWord
     ConstraintLayout backgroundDiv;
 
-    TypedArray dictionary;
-    TypedArray dictWordLenAmounts;
-    TypedArray dictWordLenIndices;
-    int wordlengthMinAvailable;
-    int wordlengthMaxAvailable;
+    private TypedArray dictionary;
+    private TypedArray dictWordLenAmounts;
+    private TypedArray dictWordLenIndices;
+    private int wordlengthMinAvailable;
+    private int wordlengthMaxAvailable;
 
-    int wordLengthMax;
-    int wordLengthMin;
+    private int wordLengthMaxSetting;
+    private int wordLengthMinSetting;
     boolean hideWord;
     boolean rerollPWords;
 
@@ -57,6 +52,7 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
 
         loadResources();
+        loadSettings();
         rerollWord();
 
         backgroundDiv.setOnTouchListener(new View.OnTouchListener() {
@@ -85,17 +81,36 @@ public class GameActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        loadSettings();
+
+        if (hideWord) setWordInvisible();
+        else setWordVisible();
+    }
+
     private void loadResources()
     {
         Resources res = getResources();
         dictionary = res.obtainTypedArray(R.array.dict);
-        dictWordLenAmounts = res.obtainTypedArray(R.array.len_amount);
-        dictWordLenIndices = res.obtainTypedArray(R.array.len_index);
         wordlengthMinAvailable = res.getInteger(R.integer.min_len);
         wordlengthMaxAvailable = res.getInteger(R.integer.max_len);
+        dictWordLenAmounts = res.obtainTypedArray(R.array.len_amount);
+        dictWordLenIndices = res.obtainTypedArray(R.array.len_index);
 
         tvRandomWord = findViewById(R.id.tvRandomWord);
         backgroundDiv = findViewById(R.id.backgroundDiv);
+    }
+
+    private void loadSettings()
+    {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
+        wordLengthMaxSetting = Integer.parseInt(sharedPreferences.getString(WORD_LENGTH_MAX, ""+wordlengthMaxAvailable));
+        wordLengthMinSetting = Integer.parseInt(sharedPreferences.getString(WORD_LENGTH_MIN, ""+wordlengthMinAvailable));
+        hideWord = sharedPreferences.getBoolean(HIDE_WORD, false);
+        rerollPWords = sharedPreferences.getBoolean(REROLL_WORDS_STARTING_WITH_P, false);
     }
 
     public void setWordVisible()
@@ -110,16 +125,6 @@ public class GameActivity extends AppCompatActivity {
                 | InputType.TYPE_TEXT_VARIATION_PASSWORD);
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        loadSettings();
-
-        if (hideWord) setWordInvisible();
-        else tvRandomWord.setInputType(InputType.TYPE_CLASS_TEXT);
-    }
-
     public void showWordFor1s()
     {
         timer.cancel();
@@ -132,46 +137,30 @@ public class GameActivity extends AppCompatActivity {
         rerollWord();
     }
 
-    public String getRandomWord()
+    private String getRandomWord()
     {
-        int start = dictWordLenIndices.getInt(wordLengthMin, -1);
-        int stop = dictWordLenIndices.getInt(wordLengthMax, -1)
-                 + dictWordLenAmounts.getInt(wordLengthMax, -1);
-        // Log.i("wordLengthMin:", String.valueOf(wordLengthMin));
-        // Log.i("wordLengthMax:", String.valueOf(wordLengthMax));
-        assert dictWordLenIndices.getInt(wordLengthMin, -1) != -1;
-        assert dictWordLenIndices.getInt(wordLengthMax, -1) != -1;
-        assert dictWordLenAmounts.getInt(wordLengthMax, -1) != -1;
+        int start = dictWordLenIndices.getInt(wordLengthMinSetting, -1);
+        int stop = dictWordLenIndices.getInt(wordLengthMaxSetting, -1)
+                 + dictWordLenAmounts.getInt(wordLengthMaxSetting, -1);
 
         return getRandomWord(start, stop);
     }
 
-    public String getRandomWord(int start, int stop)
+    private String getRandomWord(int start, int stop)
     {
         int max = min(stop, dictionary.length());
         int index = start + (int) Math.floor(Math.random()*(max-start));
-        // Log.i("random index:", String.valueOf(index));
+
         return dictionary.getString(index);
     }
 
-    public void rerollWord()
+    private void rerollWord()
     {
         String newWord = getRandomWord();
-        // TODO: fix what happens when rerolling is happening
-        if (rerollPWords) while(newWord.startsWith("p")) newWord = getRandomWord(0, dictionary.length());
+        if (rerollPWords) while(newWord.startsWith("p")) newWord = getRandomWord();
 
         tvRandomWord.setText(newWord);
         if (hideWord) showWordFor1s();
-    }
-
-
-    public void loadSettings()
-    {
-        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
-        wordLengthMax = Integer.parseInt(sharedPreferences.getString(WORD_LENGTH_MAX, "20"));
-        wordLengthMin = Integer.parseInt(sharedPreferences.getString(WORD_LENGTH_MIN, "1"));
-        hideWord = sharedPreferences.getBoolean(HIDE_WORD, false);
-        rerollPWords = sharedPreferences.getBoolean(REROLL_WORDS_STARTING_WITH_P, false);
     }
 
     public void showSettings(View x)
