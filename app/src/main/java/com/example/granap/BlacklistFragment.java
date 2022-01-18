@@ -1,9 +1,5 @@
 package com.example.granap;
 
-import static com.example.granap.SettingsFragment.SHARED_PREFERENCES;
-
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -11,22 +7,23 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link BlacklistFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
 public class BlacklistFragment extends Fragment {
 
     public static String IGNORED_PREF = "ignoredPreferences";
     public static String IGNORED_SET = "ignoredSet";
 
+    EditText iFilter;
     RecyclerView recyclerView;
-    BlacklistAdapter crimeAdapter;
+    BlacklistAdapter blacklistAdapter;
 
     public BlacklistFragment() {} // Required empty public constructor
 
@@ -46,9 +43,11 @@ public class BlacklistFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        iFilter = view.findViewById(R.id.iFilter);
+
         recyclerView = view.findViewById(R.id.recyclerView);
-        crimeAdapter = new BlacklistAdapter(getContext());
-        recyclerView.setAdapter(crimeAdapter);
+        blacklistAdapter = new BlacklistAdapter(getContext());
+        recyclerView.setAdapter(blacklistAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 }

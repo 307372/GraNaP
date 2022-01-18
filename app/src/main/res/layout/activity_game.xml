@@ -41,6 +41,7 @@
         android:minWidth="48dp"
         android:minHeight="48dp"
         android:onClick="showSettings"
+        android:tintMode="src_in"
         android:tooltipText="Ustawienia"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -49,18 +50,34 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
-        android:id="@+id/bSettingsGame2"
+        android:id="@+id/bGoogleWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
         android:minWidth="48dp"
         android:minHeight="48dp"
         android:onClick="googleTheWord"
+        android:tintMode="src_in"
         android:tooltipText="Zgoogluj"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bHelpGame"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_search"
+        app:tint="@color/green_terminal"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/bAddToIgnored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:onClick="addToIgnored"
+        android:tintMode="multiply"
+        android:tooltipText="Zgoogluj"
+        app:layout_constraintEnd_toStartOf="@+id/bSettingsGame"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_notification_clear_all"
         app:tint="@color/green_terminal"
         tools:ignore="SpeakableTextPresentCheck" />
 
@@ -72,6 +89,7 @@
         android:minWidth="48dp"
         android:minHeight="48dp"
         android:onClick="showHelp"
+        android:tintMode="src_in"
         android:tooltipText="Zasady"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

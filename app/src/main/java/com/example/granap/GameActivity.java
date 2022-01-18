@@ -22,13 +22,13 @@ import android.text.InputType;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class GameActivity extends AppCompatActivity {
 
     TextView tvRandomWord;
     ConstraintLayout backgroundDiv;
 
-    private TypedArray dictionary;
     private TypedArray dictWordLenAmounts;
     private TypedArray dictWordLenIndices;
     private int wordlengthMinAvailable;
@@ -36,11 +36,13 @@ public class GameActivity extends AppCompatActivity {
 
     private int wordLengthMaxSetting;
     private int wordLengthMinSetting;
+
+    private int currentWordIndex;
     boolean hideWord;
     boolean rerollPWords;
     WordManager manager;
 
-    static private String STATE_WORD = "stateWord";
+    static private final String STATE_WORD = "stateWordIndex";
 
     CountDownTimer timer = new CountDownTimer(1000, 100) {
         @Override public void onTick(long x) {}
@@ -49,14 +51,14 @@ public class GameActivity extends AppCompatActivity {
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        outState.putString(STATE_WORD, tvRandomWord.getText().toString());
+        outState.putInt(STATE_WORD, currentWordIndex);
 
         super.onSaveInstanceState(outState);
     }
 
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
-        tvRandomWord.setText(savedInstanceState.getString(STATE_WORD));
+        setNewWordByIndex(savedInstanceState.getInt(STATE_WORD));
     }
 
     @Override
@@ -70,7 +72,7 @@ public class GameActivity extends AppCompatActivity {
         loadSettings();
 
         if (savedInstanceState != null) {
-            tvRandomWord.setText(savedInstanceState.getString(STATE_WORD));
+            setNewWordByIndex(savedInstanceState.getInt(STATE_WORD));
         }
         else rerollWord();
 
@@ -104,7 +106,7 @@ public class GameActivity extends AppCompatActivity {
     protected void onPause() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(STATE_WORD, tvRandomWord.getText().toString());
+        editor.putInt(STATE_WORD, currentWordIndex);
         editor.apply();
 
         super.onPause();
@@ -116,7 +118,7 @@ public class GameActivity extends AppCompatActivity {
 
         loadSettings();
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES, MODE_PRIVATE);
-        tvRandomWord.setText(sharedPreferences.getString(STATE_WORD, getRandomWord()));
+        setNewWordByIndex(sharedPreferences.getInt(STATE_WORD, getRandomWordIndex()));
 
         if (hideWord) setWordInvisible();
         else setWordVisible();
@@ -125,7 +127,6 @@ public class GameActivity extends AppCompatActivity {
     private void loadResources()
     {
         Resources res = getResources();
-        dictionary = res.obtainTypedArray(R.array.dict);
         wordlengthMinAvailable = res.getInteger(R.integer.min_len);
         wordlengthMaxAvailable = res.getInteger(R.integer.max_len);
         dictWordLenAmounts = res.obtainTypedArray(R.array.len_amount);
@@ -168,20 +169,31 @@ public class GameActivity extends AppCompatActivity {
         rerollWord();
     }
 
-    private String getRandomWord()
+    private int getRandomWordIndex()
     {
         int start = dictWordLenIndices.getInt(wordLengthMinSetting, -1);
         int stop = dictWordLenIndices.getInt(wordLengthMaxSetting, -1)
-                 + dictWordLenAmounts.getInt(wordLengthMaxSetting, -1);
+                + dictWordLenAmounts.getInt(wordLengthMaxSetting, -1);
 
-        return manager.getRandomWordFromRange(start, stop, rerollPWords);
+        return manager.getRandomWordIndexFromRange(start, stop, rerollPWords);
+    }
+
+    public void addToIgnored(View x)
+    {
+        manager.addToIgnored(currentWordIndex);
+        Toast.makeText(this, "Słowo zostało odane do listy ignorowanych.", Toast.LENGTH_SHORT).show();
+        rerollWord();
+    }
+
+    private void setNewWordByIndex(int index)
+    {
+        currentWordIndex = index;
+        tvRandomWord.setText(manager.getWordByIndex(index));
     }
 
     private void rerollWord()
     {
-        String newWord = getRandomWord();
-
-        tvRandomWord.setText(newWord);
+        setNewWordByIndex(getRandomWordIndex());
         if (hideWord) showWordFor1s();
     }
 

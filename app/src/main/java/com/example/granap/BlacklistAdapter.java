@@ -1,29 +1,19 @@
 package com.example.granap;
 
-import static com.example.granap.BlacklistFragment.IGNORED_PREF;
-import static com.example.granap.BlacklistFragment.IGNORED_SET;
-import static com.example.granap.SettingsFragment.SHARED_PREFERENCES;
-
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.res.TypedArray;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.lang.reflect.Array;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
 
 public class BlacklistAdapter extends RecyclerView.Adapter<BlacklistAdapter.BlacklistViewHolder>{
 
-    Context context;
     WordManager manager;
+    ArrayList<BlacklistViewItem> items;
 
     public BlacklistAdapter(Context ctx) {
-        context = ctx;
         manager = WordManager.get(ctx);
     }
 
@@ -42,9 +32,9 @@ public class BlacklistAdapter extends RecyclerView.Adapter<BlacklistAdapter.Blac
 
     @Override
     public void onBindViewHolder(@NonNull BlacklistViewHolder holder, int position) {
-        int index = manager.getNthIndexOfIgnored(position);
+        int wordIndex = manager.getNthValueFromIgnored(position);
 
-        holder.blacklistViewItem.update(index, manager.getWordByIndex(index));
+        holder.blacklistViewItem.update(wordIndex, manager.getWordByIndex(wordIndex));
     }
 
     @Override

@@ -3,22 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:onClick="showDetails">
+    android:layout_height="wrap_content">
 
     <ImageButton
         android:id="@+id/removeButton"
+        android:onClick="removeIgnored"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@null"
-        android:tintMode="multiply"
+        android:background="?attr/selectableItemBackground"
+        android:tintMode="src_in"
+        android:tooltipText="Usuń z czarnej listy"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/green_terminal"
-        tools:ignore="SpeakableTextPresentCheck"
-        tools:src="@android:drawable/ic_menu_close_clear_cancel" />
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/ignoredView"
@@ -30,8 +31,6 @@
         android:layout_marginBottom="8dp"
         android:text="Lorem Ipsium"
         android:textColor="@color/green_terminal"
-        android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/removeButton"
         app:layout_constraintStart_toStartOf="parent"

@@ -16,11 +16,6 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SettingsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class SettingsFragment extends Fragment {
 
     public static final String SHARED_PREFERENCES = "sharedPrefs";
@@ -63,7 +58,6 @@ public class SettingsFragment extends Fragment {
         setupWordLengthSettings(view);
         loadSettings();
     }
-
 
     private void setupWordLengthSettings(View view)
     {

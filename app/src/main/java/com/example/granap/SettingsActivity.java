@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
@@ -82,5 +83,19 @@ public class SettingsActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             return titles.get(position);
         }
+    }
+
+    public void removeIgnored(View itemview)
+    {
+        BlacklistViewItem item = (BlacklistViewItem) itemview.getParent().getParent();
+        String message = "Usunięto \"" + item.getWord() + "\"!";
+        Toast.makeText(item.getContext(), message, Toast.LENGTH_SHORT).show();
+        RecyclerView recyclerView = (RecyclerView) item.getParent();
+
+        WordManager manager = WordManager.get(this);
+        int viewIndex = manager.findInIgnored(item.getWordIndex());
+
+        manager.removeFromIgnored(item.getWordIndex());
+        recyclerView.getAdapter().notifyItemRemoved(viewIndex);
     }
 }

@@ -6,10 +6,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class BlacklistViewItem extends LinearLayout {
-    ImageView imageButton;
-    TextView tvIgnoredWord;
+    private ImageView imageButton;
+    private TextView tvIgnoredWord;
 
-    private int index = -1;
+    private int wordIndex = -1;
 
     public BlacklistViewItem(Context context) {
         super(context);
@@ -22,12 +22,13 @@ public class BlacklistViewItem extends LinearLayout {
     }
 
     public void update(int index, String word) {
-        this.index = index;
+        this.wordIndex = index;
         tvIgnoredWord.setText(word);
     }
 
-    public int getIndex() {
-        return index;
+    public int getWordIndex() {
+        return wordIndex;
     }
+    public String getWord() { return tvIgnoredWord.getText().toString(); }
 }
 
