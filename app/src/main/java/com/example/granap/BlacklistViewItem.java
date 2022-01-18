@@ -10,6 +10,7 @@ public class BlacklistViewItem extends LinearLayout {
     private TextView tvIgnoredWord;
 
     private int wordIndex = -1;
+    private int ignoredIndex = -1;
 
     public BlacklistViewItem(Context context) {
         super(context);
@@ -21,13 +22,17 @@ public class BlacklistViewItem extends LinearLayout {
         tvIgnoredWord = findViewById(R.id.ignoredView);
     }
 
-    public void update(int index, String word) {
-        this.wordIndex = index;
+    public void update(int ignoredIndex, int wordIndex, String word) {
+        this.wordIndex = wordIndex;
+        this.ignoredIndex = ignoredIndex;
         tvIgnoredWord.setText(word);
     }
 
     public int getWordIndex() {
         return wordIndex;
+    }
+    public int getIgnoredIndex() {
+        return ignoredIndex;
     }
     public String getWord() { return tvIgnoredWord.getText().toString(); }
 }

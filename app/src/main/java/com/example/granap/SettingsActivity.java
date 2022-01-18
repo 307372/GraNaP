@@ -85,7 +85,7 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
-    public void removeIgnored(View itemview)
+    public void removeIgnoredItem(View itemview)
     {
         BlacklistViewItem item = (BlacklistViewItem) itemview.getParent().getParent();
         String message = "Usunięto \"" + item.getWord() + "\"!";
@@ -96,6 +96,7 @@ public class SettingsActivity extends AppCompatActivity {
         int viewIndex = manager.findInIgnored(item.getWordIndex());
 
         manager.removeFromIgnored(item.getWordIndex());
-        recyclerView.getAdapter().notifyItemRemoved(viewIndex);
+
+        ((BlacklistAdapter) recyclerView.getAdapter()).removeItem(viewIndex);
     }
 }

@@ -4,17 +4,26 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
+import androidx.core.util.Pair;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.NavigableSet;
+import java.util.SortedMap;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class BlacklistAdapter extends RecyclerView.Adapter<BlacklistAdapter.BlacklistViewHolder>{
 
-    WordManager manager;
-    ArrayList<BlacklistViewItem> items;
+    private WordManager manager;
+    private SortedMap<Integer,              // Index in adapter
+            Pair<Integer, Integer>> items;  // Pair<Index in manager, Index in dictionary>
 
     public BlacklistAdapter(Context ctx) {
         manager = WordManager.get(ctx);
+        items = manager.getAdapterMap();
     }
 
     @NonNull
@@ -32,14 +41,16 @@ public class BlacklistAdapter extends RecyclerView.Adapter<BlacklistAdapter.Blac
 
     @Override
     public void onBindViewHolder(@NonNull BlacklistViewHolder holder, int position) {
-        int wordIndex = manager.getNthValueFromIgnored(position);
+        Pair<Integer, Integer> data = items.get(position);
+        int wordIndex = data.second;
+        int ignoredIndex = data.first;
 
-        holder.blacklistViewItem.update(wordIndex, manager.getWordByIndex(wordIndex));
+        holder.blacklistViewItem.update(ignoredIndex, wordIndex, manager.getWordByIndex(wordIndex));
     }
 
     @Override
     public int getItemCount() {
-        return manager.getIgnoredSize();
+        return items.size();
     }
 
     public class BlacklistViewHolder extends RecyclerView.ViewHolder {
@@ -51,4 +62,9 @@ public class BlacklistAdapter extends RecyclerView.Adapter<BlacklistAdapter.Blac
         }
     }
 
+    public void removeItem(int pos)
+    {
+
+        notifyItemRemoved(pos);
+    }
 }

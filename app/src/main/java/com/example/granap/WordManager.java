@@ -10,9 +10,14 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.widget.Toast;
 
+import androidx.core.util.Pair;
+
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.NavigableSet;
 import java.util.Set;
+import java.util.SortedMap;
+import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 
@@ -154,6 +159,34 @@ class WordManager {
         int max = min(stop, dictionary.length);
 
         return getRandomViableIndex(start, max-start, rerollP);
+    }
+
+    public SortedMap<Integer, Pair<Integer, Integer>> getAdapterMap()
+    {
+        Iterator<Integer> iter = ignoredIndices.iterator();
+        SortedMap<Integer, Pair<Integer, Integer>> res = new TreeMap<>();
+        for (int i=0; i < ignoredIndices.size(); ++i)
+        {
+            res.put(i, new Pair<>(i, iter.next()));
+        }
+
+        return res;
+    }
+
+    public SortedMap<Integer, Pair<Integer, Integer>> getFilteredAdapterMap(String pattern)
+    {
+        Iterator<Integer> iter = ignoredIndices.iterator();
+        SortedMap<Integer, Pair<Integer, Integer>> res = new TreeMap<>();
+        int indexInMap = 0;
+        for (int i=0; i < ignoredIndices.size(); ++i)
+        {
+            int current = iter.next();
+            if (dictionary[current].contains(pattern)) {
+                res.put(indexInMap++, new Pair<>(i, current));
+            }
+        }
+
+        return res;
     }
 
     public int getIgnoredSize() {return ignoredIndices.size();}
