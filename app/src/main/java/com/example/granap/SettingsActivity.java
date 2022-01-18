@@ -92,11 +92,6 @@ public class SettingsActivity extends AppCompatActivity {
         Toast.makeText(item.getContext(), message, Toast.LENGTH_SHORT).show();
         RecyclerView recyclerView = (RecyclerView) item.getParent();
 
-        WordManager manager = WordManager.get(this);
-        int viewIndex = manager.findInIgnored(item.getWordIndex());
-
-        manager.removeFromIgnored(item.getWordIndex());
-
-        ((BlacklistAdapter) recyclerView.getAdapter()).removeItem(viewIndex);
+        ((BlacklistAdapter) recyclerView.getAdapter()).removeItem(item.getWordIndex());
     }
 }

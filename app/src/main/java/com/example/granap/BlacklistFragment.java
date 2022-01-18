@@ -44,6 +44,18 @@ public class BlacklistFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         iFilter = view.findViewById(R.id.iFilter);
+        iFilter.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                blacklistAdapter.filter(s.toString());
+            }
+        });
 
         recyclerView = view.findViewById(R.id.recyclerView);
         blacklistAdapter = new BlacklistAdapter(getContext());

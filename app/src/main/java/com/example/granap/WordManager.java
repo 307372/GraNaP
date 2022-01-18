@@ -141,48 +141,31 @@ class WordManager {
 
     public int getRandomWordIndexFromRange(int start, int stop, boolean rerollP)
     {
-        /*
-        if (start == stop)
-        {
-            String result = getWordByIndex(start);
-            if (rerollP && result.startsWith("p") || ignoredIndices.contains(start)) {
-                String message = "W podanym zakresie rozmiarów nie ma słów spełniających twoje wymagania!\nPoszerzam zakres poszukiwań";
-                Toast.makeText(ctx, message, Toast.LENGTH_LONG).show();
-            }
-        }
-                // TO DO: RETRIEVE WORD FROM DICT
-        //       IF IT'S IGNORED, THEN if start==stop show toast saying
-        //       "no more words of this size, rolling from all possible"
-        //
-        */
-
         int max = min(stop, dictionary.length);
-
         return getRandomViableIndex(start, max-start, rerollP);
     }
 
-    public SortedMap<Integer, Pair<Integer, Integer>> getAdapterMap()
+    public SortedMap<Integer, Integer> getAdapterMap()
     {
         Iterator<Integer> iter = ignoredIndices.iterator();
-        SortedMap<Integer, Pair<Integer, Integer>> res = new TreeMap<>();
+        SortedMap<Integer, Integer> res = new TreeMap<>();
         for (int i=0; i < ignoredIndices.size(); ++i)
         {
-            res.put(i, new Pair<>(i, iter.next()));
+            res.put(i, iter.next());
         }
 
         return res;
     }
 
-    public SortedMap<Integer, Pair<Integer, Integer>> getFilteredAdapterMap(String pattern)
+    public SortedMap<Integer, Integer> getFilteredAdapterMap(String pattern)
     {
         Iterator<Integer> iter = ignoredIndices.iterator();
-        SortedMap<Integer, Pair<Integer, Integer>> res = new TreeMap<>();
-        int indexInMap = 0;
+        SortedMap<Integer, Integer> res = new TreeMap<>();
         for (int i=0; i < ignoredIndices.size(); ++i)
         {
             int current = iter.next();
             if (dictionary[current].contains(pattern)) {
-                res.put(indexInMap++, new Pair<>(i, current));
+                res.put(i, current);
             }
         }
 
