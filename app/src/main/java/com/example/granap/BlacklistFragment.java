@@ -18,18 +18,14 @@ import java.util.ArrayList;
 
 public class BlacklistFragment extends Fragment {
 
-    public static String IGNORED_PREF = "ignoredPreferences";
-    public static String IGNORED_SET = "ignoredSet";
+    public static final String IGNORED_PREF = "ignoredPreferences";
+    public static final String IGNORED_SET = "ignoredSet";
 
     EditText iFilter;
     RecyclerView recyclerView;
     BlacklistAdapter blacklistAdapter;
 
     public BlacklistFragment() {} // Required empty public constructor
-
-    public static BlacklistFragment newInstance() {
-        return new BlacklistFragment();
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

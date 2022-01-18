@@ -8,14 +8,10 @@ import android.text.Spanned;
 
 public class InputFilterMinMax implements InputFilter {
 
-    private int max;
+    private final int max;
 
     public InputFilterMinMax(int max) {
         this.max = max;
-    }
-
-    public InputFilterMinMax(String max) {
-        this.max = Integer.parseInt(max);
     }
 
     @Override

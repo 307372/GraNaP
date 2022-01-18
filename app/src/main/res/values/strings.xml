@@ -2,4 +2,14 @@
     <string name="app_name">Gra na P</string>
     <string name="title">Gra na literę P</string>
     <string name="dlugosc_hasel">Długość haseł</string>
+    <string name="zasady_n1_po_rozpocz_ciu_gry_zostanie_wylosowane_has_o_zadaniem_osoby_m_wi_cej_jest_opisa_has_o_za_pomoc_s_w_na_liter_p_n_n2_nie_obawiaj_si_losowa_wielokrotnie_je_li_has_o_jest_zbyt_atwe_zbyt_trudne_n_n3_reszta_graczy_ma_za_zadanie_domy_li_si_jakie_jest_has_o_mo_na_zadawa_pytania_przedstawiaj_cemu_n_n4_po_natrafieniu_przez_graczy_na_has_o_nast_puje_zmiana_osoby_przedstawiaj_cej_n_nzasady_s_celowo_dosy_og_lne_szczeg_y_ustalcie_jak_wam_pasuje_wa_niejsza_od_zasad_jest_dobra_zabawa">ZASADY\n1. Po rozpoczęciu gry zostanie wylosowane hasło, zadaniem osoby mówiącej jest opisać hasło za pomocą słów na literę P.\n\n2. Nie obawiaj się losować wielokrotnie, jeśli hasło jest zbyt łatwe / zbyt trudne.\n\n3. Reszta graczy ma za zadanie domyślić się jakie jest hasło. Można zadawać pytania przedstawiającemu.\n\n4. Po natrafieniu przez graczy na hasło, następuje zmiana osoby przedstawiającej.\n\nZasady są celowo dosyć ogólne - szczegóły ustalcie jak wam pasuje, ważniejsza od zasad jest dobra zabawa :)</string>
+    <string name="wylosuj_inne">Wylosuj inne</string>
+    <string name="ustawienia">Ustawienia</string>
+    <string name="graj">Graj</string>
+    <string name="pomoc">Pomoc</string>
+    <string name="min">Min</string>
+    <string name="ukrywanie_has_a">Ukrywanie hasła</string>
+    <string name="wy_cz_s_owa_na_p">Wyłącz słowa na P</string>
+    <string name="max">Max</string>
+    <string name="zapisz">Zapisz</string>
 </resources>

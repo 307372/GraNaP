@@ -13,6 +13,7 @@ public class HelpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_help);
     }
 
+    @SuppressWarnings("unused")
     public void returnFromActivity(View x)
     {
         finish();

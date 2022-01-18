@@ -7,10 +7,7 @@ import static java.lang.Math.min;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.widget.Toast;
-
-import androidx.core.util.Pair;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -23,23 +20,24 @@ import java.util.stream.Collectors;
 
 class WordManager {
     private static WordManager manager;
-    private String[] dictionary;
+    private final String[] dictionary;
 
     NavigableSet<Integer> ignoredIndices;
-    Context ctx;
+    final SharedPreferences sp;
+    final Toast timeoutMessage;
 
     private WordManager(Context ctx)
     {
-        this.ctx = ctx;
-        Resources res = ctx.getResources();
-        dictionary = res.getStringArray(R.array.dict);
-
+        sp = ctx.getSharedPreferences(IGNORED_PREF, Context.MODE_PRIVATE);
+        dictionary = ctx.getResources().getStringArray(R.array.dict);
+        String message = "Zmień ustawienia losowania, w tym zakresie nie ma nic co pasuje do obecnych ustawień!";
+        timeoutMessage = Toast.makeText(ctx, message, Toast.LENGTH_LONG);
         loadIgnoredWords();
     }
 
     private void loadIgnoredWords()
     {
-        SharedPreferences sp = ctx.getSharedPreferences(IGNORED_PREF, Context.MODE_PRIVATE);
+
 
         Set<String> loadedIgnored = sp.getStringSet(IGNORED_SET, new HashSet<>());
         ignoredIndices = new TreeSet<>();
@@ -56,7 +54,6 @@ class WordManager {
 
     private void saveIgnored()
     {
-        SharedPreferences sp = ctx.getSharedPreferences(IGNORED_PREF, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
 
         Set<String> stringIgnored = ignoredIndices.stream()
@@ -84,23 +81,9 @@ class WordManager {
         return dictionary[wordIndex];
     }
 
-    public int getNthValueFromIgnored(int n)
-    {
-        int i=0;
-        for (Integer ignoredIndex : ignoredIndices) {
-            if (i++ == n) return ignoredIndex;
-        }
-        return -1;
-    }
-
-    public String getNthIgnoredWord(int wordIndex)
-    {
-        return getWordByIndex(getNthValueFromIgnored(wordIndex));
-    }
-
     private int rollNext(int min, int range_size) {
         return min + (int) Math.floor(Math.random()*(range_size));
-    };
+    }
 
     private int getRandomViableIndex(int min, int range_size, boolean rerollP)
     {
@@ -124,19 +107,9 @@ class WordManager {
             }
         }
         if (timeoutCounter == timeout_constant) {
-            Toast.makeText(ctx, "TIMEOUT", Toast.LENGTH_LONG).show();
+            timeoutMessage.show();
         }
         return index;
-    }
-
-    public int findInIgnored(int wordIndex)
-    {
-        int pos=0;
-        for (Integer ignoredIndex : ignoredIndices) {
-            if (ignoredIndex == wordIndex) return pos;
-            ++pos;
-        }
-        return -1;
     }
 
     public int getRandomWordIndexFromRange(int start, int stop, boolean rerollP)
@@ -171,7 +144,5 @@ class WordManager {
 
         return res;
     }
-
-    public int getIgnoredSize() {return ignoredIndices.size();}
 }
 

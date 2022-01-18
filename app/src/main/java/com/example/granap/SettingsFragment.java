@@ -35,10 +35,6 @@ public class SettingsFragment extends Fragment {
 
     public SettingsFragment() {} // Required empty public constructor
 
-    public static SettingsFragment newInstance() {
-        return new SettingsFragment();
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

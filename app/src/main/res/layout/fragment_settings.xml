@@ -16,7 +16,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:gravity="center"
-            android:text="Min"
+            android:text="@string/min"
             app:layout_constraintBottom_toBottomOf="@+id/iWordLengthMin"
             app:layout_constraintEnd_toStartOf="@+id/iWordLengthMin"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,6 @@
             app:layout_constraintTop_toBottomOf="@+id/iWordLengthMax" />
 
         <View
-            android:id="@+id/view8"
             style="@style/Divider"
             android:layout_width="0dp"
             android:layout_marginStart="3dp"
@@ -52,7 +51,6 @@
             app:layout_constraintTop_toBottomOf="@+id/swHideWord" />
 
         <View
-            android:id="@+id/view7"
             style="@style/Divider"
             android:layout_width="0dp"
             android:layout_marginStart="3dp"
@@ -64,11 +62,10 @@
             app:layout_constraintTop_toBottomOf="@+id/iWordLengthMax" />
 
         <TextView
-            android:id="@+id/_tvHideWord"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:gravity="center"
-            android:text="Ukrywanie hasła"
+            android:text="@string/ukrywanie_has_a"
             android:tooltipText="Przytrzymaj dowolne miejsce na ekranie gry aby hasło stało się widoczne."
             app:layout_constraintBottom_toBottomOf="@+id/swHideWord"
             app:layout_constraintEnd_toStartOf="@+id/swHideWord"
@@ -78,11 +75,10 @@
             app:layout_constraintVertical_bias="1.0" />
 
         <TextView
-            android:id="@+id/_tvRerollWordsStartingWithP"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:gravity="center"
-            android:text="Wyłącz słowa na P"
+            android:text="@string/wy_cz_s_owa_na_p"
             android:tooltipText="Słowa zaczynające się na literę P nigdy nie zostaną wylosowane"
             app:layout_constraintBottom_toBottomOf="@+id/swRerollWordsStartingWithP"
             app:layout_constraintEnd_toStartOf="@+id/swRerollWordsStartingWithP"
@@ -100,14 +96,15 @@
             android:singleLine="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvWordLength"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="SpeakableTextPresentCheck"
+            android:importantForAutofill="no" />
 
         <TextView
             android:id="@+id/_tvWordLengthMax"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:gravity="center"
-            android:text="Max"
+            android:text="@string/max"
             app:layout_constraintBottom_toBottomOf="@+id/iWordLengthMax"
             app:layout_constraintEnd_toStartOf="@+id/iWordLengthMax"
             app:layout_constraintStart_toStartOf="parent"
@@ -124,13 +121,13 @@
             android:singleLine="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iWordLengthMin"
-            tools:ignore="SpeakableTextPresentCheck" />
+            tools:ignore="SpeakableTextPresentCheck"
+            android:importantForAutofill="no" />
 
         <Button
-            android:id="@+id/bSaveSettings"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Zapisz"
+            android:text="@string/zapisz"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

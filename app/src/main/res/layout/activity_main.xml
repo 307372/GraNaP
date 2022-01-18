@@ -8,7 +8,6 @@
     tools:context=".MainMenuActivity">
 
     <TextView
-        android:id="@+id/_title"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:autoSizeTextType="uniform"
@@ -28,7 +27,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:onClick="showHelp"
-        android:text="Pomoc"
+        android:text="@string/pomoc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -38,7 +37,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:onClick="showGame"
-        android:text="Graj"
+        android:text="@string/graj"
         app:layout_constraintBottom_toTopOf="@+id/bSettingsMainMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -48,7 +47,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:onClick="showSettings"
-        android:text="Ustawienia"
+        android:text="@string/ustawienia"
         app:layout_constraintBottom_toTopOf="@+id/bHelp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

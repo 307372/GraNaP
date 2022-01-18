@@ -1,33 +1,24 @@
 package com.example.granap;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
-import androidx.core.util.Pair;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.NavigableSet;
-import java.util.Optional;
 import java.util.SortedMap;
-import java.util.TreeMap;
-import java.util.TreeSet;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class BlacklistAdapter extends RecyclerView.Adapter<BlacklistAdapter.BlacklistViewHolder>{
 
-    private WordManager manager;
+    private final WordManager manager;
     private SortedMap<Integer, Integer> items;  // Pair<Index in manager, Index in dictionary>
 
     Integer[] keys;
     private final Lock lock = new ReentrantLock();
-    final Object mutex = new Object();
 
     public BlacklistAdapter(Context ctx) {
         manager = WordManager.get(ctx);
@@ -52,12 +43,8 @@ public class BlacklistAdapter extends RecyclerView.Adapter<BlacklistAdapter.Blac
     @Override
     public void onBindViewHolder(@NonNull BlacklistViewHolder holder, int position)
     {
-        int key = keys[position];
-
-        int wordIndex = items.get(key);
-        int ignoredIndex = key;
-
-        holder.blacklistViewItem.update(ignoredIndex, wordIndex, manager.getWordByIndex(wordIndex));
+        int wordIndex = items.get(keys[position]);
+        holder.blacklistViewItem.update(wordIndex, manager.getWordByIndex(wordIndex));
     }
 
     @Override
@@ -65,8 +52,8 @@ public class BlacklistAdapter extends RecyclerView.Adapter<BlacklistAdapter.Blac
         return items.size();
     }
 
-    public class BlacklistViewHolder extends RecyclerView.ViewHolder {
-        BlacklistViewItem blacklistViewItem;
+    public static class BlacklistViewHolder extends RecyclerView.ViewHolder {
+        final BlacklistViewItem blacklistViewItem;
 
         public BlacklistViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -77,26 +64,25 @@ public class BlacklistAdapter extends RecyclerView.Adapter<BlacklistAdapter.Blac
     public void removeItem(Integer wordIndex) {
         lock.lock();
         try {
-            if (!items.containsValue(wordIndex)) return;
+            if (!items.containsValue(wordIndex))
+                return; // in case the same delete op was started 2x
+
             int i;
             for (i = 0; i < keys.length; ++i) {
-                int ithKey = keys[i];
-                Integer newWordIndex = items.get(ithKey);
-                if (wordIndex.equals(newWordIndex)) break;
+                if (wordIndex.equals(items.get(keys[i]))) break;
             }
             assert i != keys.length;
-
 
             manager.removeFromIgnored(items.get(keys[i]));
             items.remove(keys[i]);
             keys = items.keySet().toArray(keys);
             notifyItemRemoved(i);
-
         } finally {
             lock.unlock();
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void filter(String pattern)
     {
         lock.lock();

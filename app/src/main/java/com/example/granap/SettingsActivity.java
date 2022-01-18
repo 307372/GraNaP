@@ -55,8 +55,8 @@ public class SettingsActivity extends AppCompatActivity {
 
     private class ViewPagerAdapter extends FragmentPagerAdapter {
 
-        private List<Fragment> fragments = new ArrayList<>();
-        private List<String> titles = new ArrayList<>();
+        private final List<Fragment> fragments = new ArrayList<>();
+        private final List<String> titles = new ArrayList<>();
 
         public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
             super(fm, behavior);

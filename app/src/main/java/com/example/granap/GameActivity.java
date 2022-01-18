@@ -44,7 +44,7 @@ public class GameActivity extends AppCompatActivity {
 
     static private final String STATE_WORD = "stateWordIndex";
 
-    CountDownTimer timer = new CountDownTimer(1000, 100) {
+    final CountDownTimer timer = new CountDownTimer(1000, 100) {
         @Override public void onTick(long x) {}
         public void onFinish() {setWordInvisible();}
     };
@@ -61,6 +61,7 @@ public class GameActivity extends AppCompatActivity {
         setNewWordByIndex(savedInstanceState.getInt(STATE_WORD));
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -164,7 +165,7 @@ public class GameActivity extends AppCompatActivity {
         timer.start();
     }
 
-    public void rerollWordAdapter(View x)
+    public void rerollWordAdapter(@SuppressWarnings("unused") View x)
     {
         rerollWord();
     }
@@ -178,7 +179,7 @@ public class GameActivity extends AppCompatActivity {
         return manager.getRandomWordIndexFromRange(start, stop, rerollPWords);
     }
 
-    public void addToIgnored(View x)
+    public void addToIgnored(@SuppressWarnings("unused") View x)
     {
         manager.addToIgnored(currentWordIndex);
         Toast.makeText(this, "Słowo zostało odane do listy ignorowanych.", Toast.LENGTH_SHORT).show();
@@ -197,17 +198,18 @@ public class GameActivity extends AppCompatActivity {
         if (hideWord) showWordFor1s();
     }
 
-    public void showSettings(View x)
+    public void showSettings(@SuppressWarnings("unused") View x)
     {
         startActivity(new Intent(this, SettingsActivity.class));
     }
 
-    public void showHelp(View x)
+    public void showHelp(@SuppressWarnings("unused") View x)
     {
         startActivity(new Intent(this, HelpActivity.class));
     }
 
-    public void googleTheWord(View v) {
+    @SuppressWarnings("unused")
+    public void googleTheWord(View x) {
         Intent googleStuff = new Intent(Intent.ACTION_VIEW,
                 Uri.parse("https://www.google.com/search?q=" +
                         tvRandomWord.getText().toString().replace(" ", "+")));
