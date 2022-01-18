@@ -1,11 +1,10 @@
 package com.example.granap;
 
-import static com.example.granap.SettingsActivity.HIDE_WORD;
-import static com.example.granap.SettingsActivity.REROLL_WORDS_STARTING_WITH_P;
-import static com.example.granap.SettingsActivity.SHARED_PREFERENCES;
-import static com.example.granap.SettingsActivity.WORD_LENGTH_MAX;
-import static com.example.granap.SettingsActivity.WORD_LENGTH_MIN;
-
+import static com.example.granap.SettingsFragment.HIDE_WORD;
+import static com.example.granap.SettingsFragment.REROLL_WORDS_STARTING_WITH_P;
+import static com.example.granap.SettingsFragment.SHARED_PREFERENCES;
+import static com.example.granap.SettingsFragment.WORD_LENGTH_MAX;
+import static com.example.granap.SettingsFragment.WORD_LENGTH_MIN;
 import static java.lang.Math.min;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,6 +38,7 @@ public class GameActivity extends AppCompatActivity {
     private int wordLengthMinSetting;
     boolean hideWord;
     boolean rerollPWords;
+    WordManager manager;
 
     static private String STATE_WORD = "stateWord";
 
@@ -63,6 +63,8 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        manager = WordManager.get(this);
 
         loadResources();
         loadSettings();
@@ -172,21 +174,12 @@ public class GameActivity extends AppCompatActivity {
         int stop = dictWordLenIndices.getInt(wordLengthMaxSetting, -1)
                  + dictWordLenAmounts.getInt(wordLengthMaxSetting, -1);
 
-        return getRandomWord(start, stop);
-    }
-
-    private String getRandomWord(int start, int stop)
-    {
-        int max = min(stop, dictionary.length());
-        int index = start + (int) Math.floor(Math.random()*(max-start));
-
-        return dictionary.getString(index);
+        return manager.getRandomWordFromRange(start, stop, rerollPWords);
     }
 
     private void rerollWord()
     {
         String newWord = getRandomWord();
-        if (rerollPWords) while(newWord.startsWith("p")) newWord = getRandomWord();
 
         tvRandomWord.setText(newWord);
         if (hideWord) showWordFor1s();
