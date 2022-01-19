@@ -3,16 +3,18 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 24
 
     defaultConfig {
         applicationId "com.example.granap"
-        minSdk 28
-        targetSdk 31
+        minSdk 24
+        targetSdk 24
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        minSdkVersion 24
+        targetSdkVersion 31
     }
 
     buildTypes {
@@ -25,6 +27,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    compileSdkVersion 31
 }
 
 dependencies {

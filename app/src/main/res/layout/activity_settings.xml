@@ -8,11 +8,14 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
+        style="@style/CardView.Dark"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:drawable/dark_header"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:tabTextColor="@color/granap_tabview"
         tools:ignore="SpeakableTextPresentCheck">
 
     </com.google.android.material.tabs.TabLayout>
